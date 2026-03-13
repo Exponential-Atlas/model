@@ -1,0 +1,122 @@
+{
+  "id": "sensor",
+  "name": "MEMS Sensor Cost",
+  "description": "Average cost per unit for MEMS (Micro-Electro-Mechanical Systems) sensors such as accelerometers and gyroscopes. Tracks the commoditization of MEMS driven by smartphone and IoT demand.",
+  "unit": "$/unit",
+  "direction": "decreasing",
+  "category": "Compute",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": 0.001,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.14,
+    "cumulative_production": [
+      {
+        "year": 2005,
+        "value": 5,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2008,
+        "value": 12,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2010,
+        "value": 25,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2013,
+        "value": 60,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2015,
+        "value": 100,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2018,
+        "value": 180,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2020,
+        "value": 250,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      },
+      {
+        "year": 2023,
+        "value": 400,
+        "unit": "cumulative billion MEMS units shipped",
+        "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2004,
+      "value": 5.00,
+      "source": "Yole Developpement — MEMS Market Monitor; automotive MEMS accelerometers",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2007,
+      "value": 1.50,
+      "source": "Yole / STMicroelectronics — iPhone launches with MEMS accelerometer, driving volume",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2010,
+      "value": 1.50,
+      "source": "Yole Developpement — MEMS Market Monitor (smartphone MEMS boom beginning)",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2013,
+      "value": 0.50,
+      "source": "Yole — 6-axis IMU combo sensors in every smartphone; aggressive pricing from InvenSense, STMicro, Bosch",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2016,
+      "value": 0.30,
+      "source": "IC Insights — MEMS sensor ASP tracking",
+      "source_url": "https://www.icinsights.com/news/bulletins/MEMS-Sensor-Sales-Poised-To-Surge/"
+    },
+    {
+      "year": 2018,
+      "value": 0.15,
+      "source": "Yole — IoT-driven volumes pushing prices below $0.15 for basic accelerometers",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2020,
+      "value": 0.10,
+      "source": "Yole MEMS market monitor 2021 — basic MEMS accelerometers approaching $0.10",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2022,
+      "value": 0.08,
+      "source": "Yole Developpement — MEMS & Sensors Report 2023",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    },
+    {
+      "year": 2025,
+      "value": 0.04,
+      "source": "Yole Developpement — projected MEMS ASP 2025",
+      "source_url": "https://www.yolegroup.com/product/report/status-of-the-mems-industry/"
+    }
+  ]
+}

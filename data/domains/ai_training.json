@@ -1,0 +1,70 @@
+{
+  "id": "ai_training",
+  "name": "Frontier AI Training Compute",
+  "description": "Total compute used for the largest AI training runs, measured in log10(FLOP)",
+  "unit": "log10(FLOP)",
+  "direction": "increasing",
+  "category": "AI",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 50,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2012,
+      "value": 18,
+      "source": "Epoch AI — Parameter, Compute and Data Trends in ML",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2015,
+      "value": 19,
+      "source": "Epoch AI — Parameter, Compute and Data Trends in ML",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2017,
+      "value": 21,
+      "source": "Epoch AI — Transformer / large-scale training runs",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2018,
+      "value": 23,
+      "source": "Epoch AI — BERT, GPT-2 era training compute",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2020,
+      "value": 23.5,
+      "source": "Epoch AI — GPT-3 training compute estimate",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2022,
+      "value": 24.5,
+      "source": "Epoch AI — PaLM, Chinchilla era",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2023,
+      "value": 25,
+      "source": "Epoch AI — GPT-4 training compute estimate",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2024,
+      "value": 25.5,
+      "source": "Epoch AI — Gemini Ultra / Claude 3 era estimates",
+      "source_url": "https://epochai.org/data/epochdb/visualization"
+    },
+    {
+      "year": 2025,
+      "value": 26.7,
+      "source": "Epoch AI — projected frontier training runs (Llama 4, GPT-5 class)",
+      "source_url": "https://epochai.org/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year"
+    }
+  ]
+}

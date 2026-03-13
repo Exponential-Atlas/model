@@ -1,0 +1,46 @@
+{
+  "id": "industrial_robot",
+  "name": "Industrial Robot Cost",
+  "description": "Average selling price for industrial robotic arms (6-axis, medium payload)",
+  "unit": "$/unit",
+  "direction": "decreasing",
+  "category": "Robotics",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 1000,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2005,
+      "value": 75000,
+      "source": "IFR World Robotics — Industrial Robots Report",
+      "source_url": "https://ifr.org/worldrobotics/"
+    },
+    {
+      "year": 2010,
+      "value": 50000,
+      "source": "IFR World Robotics — Industrial Robots Report",
+      "source_url": "https://ifr.org/worldrobotics/"
+    },
+    {
+      "year": 2016,
+      "value": 35000,
+      "source": "IFR World Robotics — Industrial Robots Report / ARK Invest analysis",
+      "source_url": "https://ifr.org/worldrobotics/"
+    },
+    {
+      "year": 2022,
+      "value": 22000,
+      "source": "IFR World Robotics 2023 — Industrial Robots Report",
+      "source_url": "https://ifr.org/worldrobotics/"
+    },
+    {
+      "year": 2025,
+      "value": 18000,
+      "source": "IFR World Robotics — projected ASP decline / Chinese manufacturers",
+      "source_url": "https://ifr.org/worldrobotics/"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "humanoid",
+  "name": "Humanoid Robot Cost",
+  "description": "Estimated cost per unit for general-purpose humanoid robots",
+  "unit": "$/unit",
+  "direction": "decreasing",
+  "category": "Robotics",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": 100,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2020,
+      "value": 500000,
+      "source": "Boston Dynamics Spot/Atlas estimated production cost",
+      "source_url": "https://bostondynamics.com/products/atlas/"
+    },
+    {
+      "year": 2023,
+      "value": 250000,
+      "source": "Agility Robotics Digit / Figure 01 estimated cost",
+      "source_url": "https://www.figure.ai/"
+    },
+    {
+      "year": 2024,
+      "value": 150000,
+      "source": "Tesla Optimus Gen 2 estimated production cost",
+      "source_url": "https://www.tesla.com/AI"
+    },
+    {
+      "year": 2024.5,
+      "value": 90000,
+      "source": "Unitree G1 announced pricing",
+      "source_url": "https://www.unitree.com/g1/"
+    },
+    {
+      "year": 2025,
+      "value": 30000,
+      "source": "Tesla Optimus production target pricing",
+      "source_url": "https://www.tesla.com/AI"
+    },
+    {
+      "year": 2025.5,
+      "value": 16000,
+      "source": "Unitree G1 EDU pricing / Chinese manufacturer competitive pricing",
+      "source_url": "https://www.unitree.com/g1/"
+    },
+    {
+      "year": 2025.6,
+      "value": 5900,
+      "source": "Unitree G1 base model pricing announcement",
+      "source_url": "https://www.unitree.com/g1/"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "lab_grown_meat",
+  "name": "Cultured Meat Production Cost",
+  "description": "Cost per kilogram to produce cell-cultured meat. Tracks the dramatic cost decline from early proof-of-concept through pilot production. Data is sparse and often self-reported by companies.",
+  "unit": "$/kg",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 1.0,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2013,
+      "value": 1200000,
+      "source": "Mark Post / Maastricht University — first cultured beef burger cost ~$330,000 for 140g patty = ~$2.36M/kg, commonly cited as $1.2M/kg for the project",
+      "source_url": "https://www.bbc.com/news/science-environment-23576143"
+    },
+    {
+      "year": 2015,
+      "value": 80000,
+      "source": "Mosa Meat — Mark Post's estimates for second-generation production costs",
+      "source_url": "https://mosameat.com/"
+    },
+    {
+      "year": 2017,
+      "value": 2500,
+      "source": "Memphis Meats (now Upside Foods) — reported $2,400/pound ($5,300/kg) for chicken; adjusted for improvements",
+      "source_url": "https://www.upsidefoods.com/"
+    },
+    {
+      "year": 2019,
+      "value": 600,
+      "source": "Future Meat Technologies — claimed $360/kg production cost at lab scale",
+      "source_url": "https://www.reuters.com/article/us-future-meat-tech-idUSKBN23F0QL"
+    },
+    {
+      "year": 2021,
+      "value": 50,
+      "source": "Future Meat Technologies — claimed $7.70/lb ($17/kg) for chicken breast; independent estimates higher at ~$50/kg",
+      "source_url": "https://www.theguardian.com/environment/2021/dec/08/lab-grown-chicken-breast-cost-future-meat-technologies"
+    },
+    {
+      "year": 2023,
+      "value": 25,
+      "source": "GFI State of the Industry Report 2023 — estimated production costs for leading companies; Upside Foods and Good Meat FDA/USDA approved",
+      "source_url": "https://gfi.org/resource/cultivated-meat-eggs-and-dairy-state-of-the-industry-report/"
+    },
+    {
+      "year": 2024,
+      "value": 15,
+      "source": "GFI / industry estimates — projected costs with larger bioreactor scale; still far from retail parity (approx)",
+      "source_url": "https://gfi.org/resource/cultivated-meat-eggs-and-dairy-state-of-the-industry-report/"
+    }
+  ]
+}

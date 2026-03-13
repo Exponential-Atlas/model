@@ -1,0 +1,60 @@
+{
+  "id": "drug_time",
+  "name": "Drug Discovery Timeline",
+  "description": "Average time from target identification to clinical candidate for novel small-molecule drugs",
+  "unit": "months",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "medium",
+  "best_fit": "piecewise",
+  "physical_floor": 0.001,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": {
+    "breakpoint_year": 2020
+  },
+  "data_points": [
+    {
+      "year": 2000,
+      "value": 54,
+      "source": "Tufts CSDD — Cost of Developing a New Drug",
+      "source_url": "https://csdd.tufts.edu/impact-reports"
+    },
+    {
+      "year": 2005,
+      "value": 48,
+      "source": "Tufts CSDD — Cost of Developing a New Drug",
+      "source_url": "https://csdd.tufts.edu/impact-reports"
+    },
+    {
+      "year": 2010,
+      "value": 42,
+      "source": "Tufts CSDD — Cost of Developing a New Drug",
+      "source_url": "https://csdd.tufts.edu/impact-reports"
+    },
+    {
+      "year": 2015,
+      "value": 36,
+      "source": "Tufts CSDD — Cost of Developing a New Drug",
+      "source_url": "https://csdd.tufts.edu/impact-reports"
+    },
+    {
+      "year": 2020,
+      "value": 30,
+      "source": "McKinsey & Company — How AI is transforming drug discovery",
+      "source_url": "https://www.mckinsey.com/industries/life-sciences/our-insights/how-generative-ai-could-transform-drug-discovery"
+    },
+    {
+      "year": 2023,
+      "value": 18,
+      "source": "Insilico Medicine — AI-discovered drug enters Phase II in record time",
+      "source_url": "https://insilico.com/blog/insilico-medicine-announces-the-first-ai-discovered-and-ai-designed-drug-candidate"
+    },
+    {
+      "year": 2025,
+      "value": 8,
+      "source": "Google AI co-scientist / Isomorphic Labs accelerated discovery pipelines",
+      "source_url": "https://www.isomorphiclabs.com/"
+    }
+  ]
+}

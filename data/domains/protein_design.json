@@ -1,0 +1,66 @@
+{
+  "id": "protein_design",
+  "name": "De Novo Protein Design Success Rate",
+  "description": "Percentage of computationally designed novel proteins that fold and function as intended when experimentally tested. Tracks progress from Rosetta through deep learning methods (ProteinMPNN, RFdiffusion).",
+  "unit": "%",
+  "direction": "increasing",
+  "category": "Biology",
+  "confidence": "medium",
+  "best_fit": "piecewise",
+  "physical_floor": null,
+  "physical_ceiling": 100,
+  "wrights_law": null,
+  "piecewise": {
+    "breakpoint_year": 2020
+  },
+  "data_points": [
+    {
+      "year": 2003,
+      "value": 2,
+      "source": "Baker lab / Rosetta — early de novo protein design: Top7 was a breakthrough but success rates ~1-2% for novel folds",
+      "source_url": "https://doi.org/10.1126/science.1089427"
+    },
+    {
+      "year": 2008,
+      "value": 5,
+      "source": "Baker lab — Rosetta improvements for small proteins, ~5% of designed sequences folding as intended",
+      "source_url": "https://www.bakerlab.org/"
+    },
+    {
+      "year": 2012,
+      "value": 10,
+      "source": "Baker lab — systematic de novo design of protein folds; 5/43 designs crystallized successfully (~10%)",
+      "source_url": "https://doi.org/10.1038/nature11600"
+    },
+    {
+      "year": 2016,
+      "value": 15,
+      "source": "Baker lab — designed fluorescent proteins, enzymes; success rates improving with larger computational screening",
+      "source_url": "https://doi.org/10.1038/nature19946"
+    },
+    {
+      "year": 2020,
+      "value": 25,
+      "source": "Baker lab — hallucination and constrained design methods; trRosetta + Rosetta pipeline ~25% experimental success",
+      "source_url": "https://doi.org/10.1038/s41586-021-04184-w"
+    },
+    {
+      "year": 2022,
+      "value": 50,
+      "source": "Baker lab — ProteinMPNN + RFdiffusion: ~50% of designed binders showing activity experimentally",
+      "source_url": "https://doi.org/10.1038/s41586-023-06415-8"
+    },
+    {
+      "year": 2023,
+      "value": 65,
+      "source": "Baker lab — RFdiffusion all-atom: designed proteins with small molecule binding, ~65% experimental success for simple targets",
+      "source_url": "https://doi.org/10.1038/s41586-023-06953-1"
+    },
+    {
+      "year": 2024,
+      "value": 75,
+      "source": "Baker lab / DeepMind — continued improvements; ProteinMPNN + AlphaFold2 validation pipeline achieving ~75% for constrained design problems (approx)",
+      "source_url": "https://www.bakerlab.org/"
+    }
+  ]
+}

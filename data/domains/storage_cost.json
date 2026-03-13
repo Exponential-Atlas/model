@@ -1,0 +1,52 @@
+{
+  "id": "storage_cost",
+  "name": "Digital Storage Cost",
+  "description": "Cost per gigabyte of hard disk / SSD storage",
+  "unit": "$/GB",
+  "direction": "decreasing",
+  "category": "Compute",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 1e-08,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1980,
+      "value": 500000,
+      "source": "Our World in Data — Historical cost of computer memory and storage",
+      "source_url": "https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage"
+    },
+    {
+      "year": 1990,
+      "value": 10000,
+      "source": "Our World in Data — Historical cost of computer memory and storage",
+      "source_url": "https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage"
+    },
+    {
+      "year": 2000,
+      "value": 10,
+      "source": "Our World in Data — Historical cost of computer memory and storage",
+      "source_url": "https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage"
+    },
+    {
+      "year": 2010,
+      "value": 0.1,
+      "source": "Our World in Data — Historical cost of computer memory and storage",
+      "source_url": "https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage"
+    },
+    {
+      "year": 2020,
+      "value": 0.02,
+      "source": "Backblaze — Hard Drive Cost Per Gigabyte",
+      "source_url": "https://www.backblaze.com/blog/hard-drive-cost-per-gigabyte/"
+    },
+    {
+      "year": 2025,
+      "value": 0.01,
+      "source": "Backblaze / PCPartPicker — Storage pricing trends 2025",
+      "source_url": "https://www.backblaze.com/blog/hard-drive-cost-per-gigabyte/"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ai_inference",
+  "name": "AI Inference Cost (GPT-4 Level)",
+  "description": "Cost per million tokens for frontier-quality AI inference, benchmarked at GPT-4 equivalent capability",
+  "unit": "$/Mtok",
+  "direction": "decreasing",
+  "category": "AI",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 1e-12,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2023.3,
+      "value": 60,
+      "source": "OpenAI GPT-4 API launch pricing",
+      "source_url": "https://openai.com/pricing"
+    },
+    {
+      "year": 2023.9,
+      "value": 30,
+      "source": "OpenAI GPT-4 Turbo announcement pricing",
+      "source_url": "https://openai.com/blog/new-models-and-developer-products-announced-at-devday"
+    },
+    {
+      "year": 2024.1,
+      "value": 15,
+      "source": "OpenAI GPT-4 Turbo price reduction",
+      "source_url": "https://openai.com/blog/new-embedding-models-and-api-updates"
+    },
+    {
+      "year": 2024.5,
+      "value": 5,
+      "source": "OpenAI GPT-4o launch pricing",
+      "source_url": "https://openai.com/index/hello-gpt-4o/"
+    },
+    {
+      "year": 2024.9,
+      "value": 1.5,
+      "source": "Google Gemini 1.5 Flash / competitive pricing",
+      "source_url": "https://ai.google.dev/pricing"
+    },
+    {
+      "year": 2025.3,
+      "value": 0.4,
+      "source": "DeepSeek V3 / open-source inference cost estimates",
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "year": 2025.9,
+      "value": 0.1,
+      "source": "Aggregated API pricing — multiple providers at GPT-4 equivalent quality",
+      "source_url": "https://artificialanalysis.ai/text/arena?tab=Pricing"
+    }
+  ]
+}

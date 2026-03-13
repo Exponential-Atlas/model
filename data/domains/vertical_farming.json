@@ -1,0 +1,58 @@
+{
+  "id": "vertical_farming",
+  "name": "Vertical Farming Production Cost",
+  "description": "Cost per kilogram of leafy greens (lettuce equivalent) produced in indoor vertical farms. Captures declining costs from LED efficiency, automation, and scale.",
+  "unit": "$/kg",
+  "direction": "decreasing",
+  "category": "Environment",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 0.50,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2012,
+      "value": 35.0,
+      "source": "Industry estimates — early vertical farms (Sky Greens Singapore, AeroFarms pilot) operating at very high cost",
+      "source_url": "https://www.aerofarms.com/"
+    },
+    {
+      "year": 2015,
+      "value": 20.0,
+      "source": "AeroFarms, Plenty — early commercial scale facilities; LED costs declining",
+      "source_url": "https://www.aerofarms.com/"
+    },
+    {
+      "year": 2017,
+      "value": 12.0,
+      "source": "Agritecture Consulting estimates — facility-level production costs for lettuce declining with larger facilities",
+      "source_url": "https://www.agritecture.com/"
+    },
+    {
+      "year": 2019,
+      "value": 8.0,
+      "source": "80 Acres Farms, Bowery Farming — automation and LED improvements driving costs down",
+      "source_url": "https://www.boweryfarming.com/"
+    },
+    {
+      "year": 2021,
+      "value": 5.5,
+      "source": "Indoor AgTech Innovation Summit reports — industry approaching $5-6/kg for lettuce at scale",
+      "source_url": "https://indoor.ag/"
+    },
+    {
+      "year": 2023,
+      "value": 4.0,
+      "source": "Plenty Unlimited, AppHarvest reports — some facilities reaching $3.5-4.5/kg, though many still higher. AeroFarms bankruptcy shows difficulty.",
+      "source_url": "https://www.plenty.ag/"
+    },
+    {
+      "year": 2024,
+      "value": 3.5,
+      "source": "Industry estimates — surviving operators optimizing; still ~3x conventional field lettuce cost (approx)",
+      "source_url": "https://www.agritecture.com/"
+    }
+  ]
+}

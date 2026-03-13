@@ -1,0 +1,52 @@
+{
+  "id": "bandwidth",
+  "name": "Bandwidth Cost",
+  "description": "Cost per gigabyte of internet transit bandwidth",
+  "unit": "$/GB",
+  "direction": "decreasing",
+  "category": "Compute",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 1e-06,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1998,
+      "value": 1200,
+      "source": "DrPeering — Internet Transit Pricing Historical",
+      "source_url": "https://drpeering.net/white-papers/Internet-Transit-Pricing-Historical-And-Projected.php"
+    },
+    {
+      "year": 2003,
+      "value": 50,
+      "source": "DrPeering — Internet Transit Pricing Historical",
+      "source_url": "https://drpeering.net/white-papers/Internet-Transit-Pricing-Historical-And-Projected.php"
+    },
+    {
+      "year": 2008,
+      "value": 5,
+      "source": "DrPeering — Internet Transit Pricing Historical",
+      "source_url": "https://drpeering.net/white-papers/Internet-Transit-Pricing-Historical-And-Projected.php"
+    },
+    {
+      "year": 2013,
+      "value": 0.5,
+      "source": "DrPeering — Internet Transit Pricing Historical",
+      "source_url": "https://drpeering.net/white-papers/Internet-Transit-Pricing-Historical-And-Projected.php"
+    },
+    {
+      "year": 2020,
+      "value": 0.04,
+      "source": "Cloudflare / AWS bandwidth pricing benchmarks",
+      "source_url": "https://blog.cloudflare.com/aws-egregious-egress/"
+    },
+    {
+      "year": 2024,
+      "value": 0.01,
+      "source": "Cloudflare / competitive CDN pricing 2024",
+      "source_url": "https://blog.cloudflare.com/aws-egregious-egress/"
+    }
+  ]
+}

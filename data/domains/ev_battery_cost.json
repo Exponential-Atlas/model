@@ -1,0 +1,128 @@
+{
+  "id": "ev_battery_cost",
+  "name": "EV Battery Pack Cost",
+  "description": "Average lithium-ion battery pack cost for electric vehicles at the pack level, measured in dollars per kilowatt-hour. Primary data from BloombergNEF annual battery price survey.",
+  "unit": "$/kWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": 20,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.18,
+    "cumulative_production": [
+      {
+        "year": 2010,
+        "value": 0.5,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2013,
+        "value": 6,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2015,
+        "value": 25,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2017,
+        "value": 80,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2019,
+        "value": 250,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2021,
+        "value": 600,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      },
+      {
+        "year": 2023,
+        "value": 1500,
+        "unit": "cumulative GWh EV batteries deployed",
+        "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2010,
+      "value": 1183,
+      "source": "BloombergNEF Battery Price Survey 2020 (historical)",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-cited-below-100-kwh-for-the-first-time-in-2020/"
+    },
+    {
+      "year": 2012,
+      "value": 726,
+      "source": "BloombergNEF Battery Price Survey — rapid early decline",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-cited-below-100-kwh-for-the-first-time-in-2020/"
+    },
+    {
+      "year": 2014,
+      "value": 592,
+      "source": "BloombergNEF Battery Price Survey",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-cited-below-100-kwh-for-the-first-time-in-2020/"
+    },
+    {
+      "year": 2016,
+      "value": 303,
+      "source": "BloombergNEF Battery Price Survey 2016",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-fall-to-139-kwh-boosting-evs/"
+    },
+    {
+      "year": 2018,
+      "value": 185,
+      "source": "BloombergNEF Battery Price Survey 2018",
+      "source_url": "https://about.bnef.com/blog/behind-scenes-take-lithium-ion-battery-prices/"
+    },
+    {
+      "year": 2019,
+      "value": 156,
+      "source": "BloombergNEF Battery Price Survey 2019",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-fall-as-market-ramps-up/"
+    },
+    {
+      "year": 2020,
+      "value": 137,
+      "source": "BloombergNEF Battery Price Survey 2020",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-cited-below-100-kwh-for-the-first-time-in-2020/"
+    },
+    {
+      "year": 2021,
+      "value": 132,
+      "source": "BloombergNEF Battery Price Survey 2021 — slight increase due to material costs",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-rise-for-first-time-to-an-average-of-151-kwh/"
+    },
+    {
+      "year": 2022,
+      "value": 151,
+      "source": "BloombergNEF Battery Price Survey 2022 — commodity price spike",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-rise-for-first-time-to-an-average-of-151-kwh/"
+    },
+    {
+      "year": 2023,
+      "value": 139,
+      "source": "BloombergNEF Battery Price Survey 2023",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-per-kilowatt-hour/"
+    },
+    {
+      "year": 2024,
+      "value": 115,
+      "source": "BloombergNEF Battery Price Survey 2024 (estimated — continued decline with LFP adoption)",
+      "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+    }
+  ]
+}

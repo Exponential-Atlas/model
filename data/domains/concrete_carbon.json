@@ -1,0 +1,70 @@
+{
+  "id": "concrete_carbon",
+  "name": "Cement Carbon Intensity",
+  "description": "Carbon dioxide emissions per tonne of cement produced, tracking progress in decarbonization through alternative chemistries, carbon capture, clinker substitution, and energy efficiency improvements.",
+  "unit": "kgCO2/tonne",
+  "direction": "decreasing",
+  "category": "Environment",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 50,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1990,
+      "value": 756,
+      "source": "GCCA Getting the Numbers Right database — global average CO2 intensity of cement ~756 kg/tonne",
+      "source_url": "https://gccassociation.org/sustainability-innovation/gnr/"
+    },
+    {
+      "year": 2000,
+      "value": 700,
+      "source": "GCCA GNR database / IEA Cement Technology Roadmap — slight improvement from energy efficiency",
+      "source_url": "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+    },
+    {
+      "year": 2005,
+      "value": 670,
+      "source": "GCCA GNR database — clinker ratio reduction beginning in some regions",
+      "source_url": "https://gccassociation.org/sustainability-innovation/gnr/"
+    },
+    {
+      "year": 2010,
+      "value": 645,
+      "source": "IEA/WBCSD Cement Technology Roadmap 2009 — SCM usage increasing",
+      "source_url": "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+    },
+    {
+      "year": 2015,
+      "value": 630,
+      "source": "GCCA GNR database 2016 — progress slower than other sectors",
+      "source_url": "https://gccassociation.org/sustainability-innovation/gnr/"
+    },
+    {
+      "year": 2018,
+      "value": 620,
+      "source": "IEA Tracking Cement 2020 — global average roughly flat, China driving volume",
+      "source_url": "https://www.iea.org/reports/cement"
+    },
+    {
+      "year": 2020,
+      "value": 610,
+      "source": "GCCA 2050 Cement and Concrete Industry Roadmap — global weighted average ~610 kgCO2/tonne",
+      "source_url": "https://gccassociation.org/concretefuture/wp-content/uploads/2021/10/GCCA-Concrete-Future-Roadmap.pdf"
+    },
+    {
+      "year": 2022,
+      "value": 600,
+      "source": "IEA Cement Tracking Report 2023 — slow progress; novel cements (CarbonCure, Solidia) at small scale",
+      "source_url": "https://www.iea.org/reports/cement"
+    },
+    {
+      "year": 2024,
+      "value": 585,
+      "source": "GCCA / IEA estimates — accelerating clinker substitution and first CCUS pilots at cement plants (approx)",
+      "source_url": "https://www.iea.org/reports/cement"
+    }
+  ]
+}

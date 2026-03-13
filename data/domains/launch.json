@@ -1,0 +1,60 @@
+{
+  "id": "launch",
+  "name": "Launch Cost to LEO",
+  "description": "Cost per kilogram to deliver payload to Low Earth Orbit",
+  "unit": "$/kg",
+  "direction": "decreasing",
+  "category": "Space",
+  "confidence": "medium",
+  "best_fit": "piecewise",
+  "physical_floor": 1.85,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": {
+    "breakpoint_year": 2020
+  },
+  "data_points": [
+    {
+      "year": 1981,
+      "value": 54500,
+      "source": "NASA — Space Shuttle cost per kg (inflation-adjusted)",
+      "source_url": "https://www.nasa.gov/centers-and-facilities/kennedy/nasas-space-shuttle-program-by-the-numbers/"
+    },
+    {
+      "year": 2000,
+      "value": 20000,
+      "source": "FAA — Annual Compendium of Commercial Space Transportation",
+      "source_url": "https://www.faa.gov/space/office_ast/annual_compendium_commercial_space_transportation"
+    },
+    {
+      "year": 2010,
+      "value": 2720,
+      "source": "SpaceX Falcon 9 published pricing at launch",
+      "source_url": "https://www.spacex.com/media/falcon-users-guide-2021-09.pdf"
+    },
+    {
+      "year": 2018,
+      "value": 1500,
+      "source": "SpaceX Falcon 9 reusable pricing (post-reuse era)",
+      "source_url": "https://www.spacex.com/launches/"
+    },
+    {
+      "year": 2023,
+      "value": 1200,
+      "source": "SpaceX Falcon 9 Block 5 pricing",
+      "source_url": "https://www.spacex.com/launches/"
+    },
+    {
+      "year": 2025,
+      "value": 500,
+      "source": "SpaceX Starship estimated cost per kg (early operational flights)",
+      "source_url": "https://www.spacex.com/vehicles/starship/"
+    },
+    {
+      "year": 2026,
+      "value": 94,
+      "source": "SpaceX Starship target cost per kg (full reusability at scale)",
+      "source_url": "https://www.spacex.com/vehicles/starship/"
+    }
+  ]
+}

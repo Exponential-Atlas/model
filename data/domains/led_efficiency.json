@@ -1,0 +1,122 @@
+{
+  "id": "led_efficiency",
+  "name": "LED Lighting Efficacy",
+  "description": "Luminous efficacy of commercial white LED packages, measuring lumens of light output per watt of electrical input. Tracks the Haitz's Law trajectory of LED improvement.",
+  "unit": "lm/W",
+  "direction": "increasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": null,
+  "physical_ceiling": 350,
+  "wrights_law": {
+    "learning_rate": 0.20,
+    "cumulative_production": [
+      {
+        "year": 2000,
+        "value": 0.3,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting"
+      },
+      {
+        "year": 2005,
+        "value": 5,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting"
+      },
+      {
+        "year": 2010,
+        "value": 40,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.strategies-u.com/articles/2011/led-market-shipments.html"
+      },
+      {
+        "year": 2015,
+        "value": 200,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/sites/default/files/2016/06/f32/ssl_rda_june2016.pdf"
+      },
+      {
+        "year": 2018,
+        "value": 500,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/eere/ssl/led-lighting-facts"
+      },
+      {
+        "year": 2020,
+        "value": 800,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/eere/ssl/ssl-forecast-report"
+      },
+      {
+        "year": 2023,
+        "value": 1400,
+        "unit": "billion LED units shipped (cumulative)",
+        "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2000,
+      "value": 15,
+      "source": "DOE SSL Program — early commercial white LEDs (Lumileds Luxeon)",
+      "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting"
+    },
+    {
+      "year": 2005,
+      "value": 30,
+      "source": "DOE SSL Multi-Year Program Plan 2006 — Cree XLamp commercial packages",
+      "source_url": "https://www.energy.gov/sites/default/files/2014/01/f7/mypp2006.pdf"
+    },
+    {
+      "year": 2008,
+      "value": 65,
+      "source": "DOE SSL Program — Cree XLamp XR-E reaching 65 lm/W commercial",
+      "source_url": "https://www.energy.gov/eere/ssl/ssl-rd-plan"
+    },
+    {
+      "year": 2010,
+      "value": 100,
+      "source": "DOE SSL Manufacturing R&D Roadmap 2011 — commercial warm white LEDs",
+      "source_url": "https://www.energy.gov/sites/default/files/2013/12/f5/ssl_manuf-roadmap_aug2011.pdf"
+    },
+    {
+      "year": 2012,
+      "value": 130,
+      "source": "DOE SSL R&D Plan 2013 — Cree XLamp XM-L2 achieving 130+ lm/W",
+      "source_url": "https://www.energy.gov/sites/default/files/2013/03/f0/ssl_rd-plan_mar2013.pdf"
+    },
+    {
+      "year": 2014,
+      "value": 160,
+      "source": "DOE SSL Suggested Research Topics 2014 — Cree 303 lm/W lab, ~160 commercial",
+      "source_url": "https://www.energy.gov/eere/ssl/downloads/solid-state-lighting-rd-plan-2014"
+    },
+    {
+      "year": 2017,
+      "value": 180,
+      "source": "DOE SSL R&D Opportunities 2017 — best commercial warm white ~180 lm/W",
+      "source_url": "https://www.energy.gov/sites/default/files/2017/09/f37/ssl_rd-opportunities_sep2017.pdf"
+    },
+    {
+      "year": 2020,
+      "value": 200,
+      "source": "DOE SSL R&D Plan 2020 — commercial LED packages reaching 200 lm/W (cool white)",
+      "source_url": "https://www.energy.gov/sites/default/files/2020/12/f81/ssl-rd-plan2020.pdf"
+    },
+    {
+      "year": 2022,
+      "value": 210,
+      "source": "DOE SSL Suggested Research Topics 2022 — best commercial warm white ~210 lm/W",
+      "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting-research-and-development"
+    },
+    {
+      "year": 2024,
+      "value": 220,
+      "source": "DOE SSL Program Update 2024 — commercial packages approaching 220 lm/W at typical CCT",
+      "source_url": "https://www.energy.gov/eere/ssl/solid-state-lighting"
+    }
+  ]
+}

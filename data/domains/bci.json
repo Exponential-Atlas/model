@@ -1,0 +1,46 @@
+{
+  "id": "bci",
+  "name": "BCI Channels",
+  "description": "Number of simultaneous neural recording channels in brain-computer interface systems",
+  "unit": "channels",
+  "direction": "increasing",
+  "category": "BCI",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 10000000,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2005,
+      "value": 16,
+      "source": "BrainGate — First human BCI clinical trial (Cyberkinetics)",
+      "source_url": "https://www.braingate.org/publications/"
+    },
+    {
+      "year": 2012,
+      "value": 64,
+      "source": "BrainGate2 — 96-electrode Utah array (64 usable channels)",
+      "source_url": "https://www.braingate.org/publications/"
+    },
+    {
+      "year": 2018,
+      "value": 256,
+      "source": "Neuropixels 1.0 — 384 recording sites, ~256 simultaneous",
+      "source_url": "https://www.neuropixels.org/"
+    },
+    {
+      "year": 2024,
+      "value": 1024,
+      "source": "Neuralink N1 implant — 1024-electrode threads",
+      "source_url": "https://neuralink.com/"
+    },
+    {
+      "year": 2025,
+      "value": 2000,
+      "source": "Neuralink Blindsight / next-gen BCI announcements",
+      "source_url": "https://neuralink.com/"
+    }
+  ]
+}

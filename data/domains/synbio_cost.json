@@ -1,0 +1,58 @@
+{
+  "id": "synbio_cost",
+  "name": "Synthetic Biology Design Cost",
+  "description": "Approximate cost to design and build a functional synthetic biological pathway or simple organism. Captures declining costs of DNA synthesis, computational design tools, and automated screening.",
+  "unit": "$/designed pathway",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2003,
+      "value": 50000000,
+      "source": "J. Craig Venter Institute — Mycoplasma genitalium synthesis project costs; early whole-genome synthesis attempts",
+      "source_url": "https://www.jcvi.org/research/first-self-replicating-synthetic-bacterial-cell"
+    },
+    {
+      "year": 2010,
+      "value": 40000000,
+      "source": "JCVI — Synthia (Mycoplasma mycoides JCVI-syn1.0) complete synthetic genome, ~$40M total project",
+      "source_url": "https://www.jcvi.org/research/first-self-replicating-synthetic-bacterial-cell"
+    },
+    {
+      "year": 2014,
+      "value": 2000000,
+      "source": "Ginkgo Bioworks / Amyris — cost to engineer a novel metabolic pathway for commercial production declining with automated foundries",
+      "source_url": "https://www.ginkgobioworks.com/"
+    },
+    {
+      "year": 2017,
+      "value": 500000,
+      "source": "Ginkgo Bioworks / Zymergen — automated strain engineering; DNA synthesis costs falling to ~$0.10/bp",
+      "source_url": "https://www.ginkgobioworks.com/"
+    },
+    {
+      "year": 2020,
+      "value": 100000,
+      "source": "Ginkgo Bioworks / Twist Bioscience — platform approach reducing per-pathway cost; synthesis at $0.07/bp",
+      "source_url": "https://www.twistbioscience.com/"
+    },
+    {
+      "year": 2022,
+      "value": 30000,
+      "source": "Industry estimates — AI-guided design (Ginkgo, Arzeda) + cheap synthesis reducing iteration costs dramatically",
+      "source_url": "https://www.ginkgobioworks.com/"
+    },
+    {
+      "year": 2024,
+      "value": 10000,
+      "source": "Ginkgo Bioworks platform pricing / Arzeda / Tierra Biosciences — AI protein design + $0.02/bp synthesis enabling rapid iteration (approx)",
+      "source_url": "https://www.ginkgobioworks.com/"
+    }
+  ]
+}

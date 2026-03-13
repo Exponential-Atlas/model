@@ -1,0 +1,124 @@
+{
+  "id": "genome",
+  "name": "Genome Sequencing Cost",
+  "description": "Cost to sequence a complete human genome at 30x coverage. One of the most dramatic cost curves in technology, far outpacing Moore's Law since 2007 with the introduction of next-generation sequencing.",
+  "unit": "$/genome",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "high",
+  "best_fit": "piecewise",
+  "physical_floor": 0.01,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.30,
+    "cumulative_production": [
+      {
+        "year": 2003,
+        "value": 1,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+      },
+      {
+        "year": 2008,
+        "value": 50,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.nature.com/articles/d41586-019-00590-z"
+      },
+      {
+        "year": 2012,
+        "value": 10000,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.illumina.com/"
+      },
+      {
+        "year": 2015,
+        "value": 250000,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.nature.com/articles/d41586-019-00590-z"
+      },
+      {
+        "year": 2018,
+        "value": 2000000,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.illumina.com/"
+      },
+      {
+        "year": 2020,
+        "value": 10000000,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.nature.com/articles/d41586-022-00290-7"
+      },
+      {
+        "year": 2023,
+        "value": 50000000,
+        "unit": "cumulative human genomes sequenced",
+        "source_url": "https://www.illumina.com/"
+      }
+    ]
+  },
+  "piecewise": {
+    "breakpoint_year": 2008
+  },
+  "data_points": [
+    {
+      "year": 2001,
+      "value": 100000000,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2004,
+      "value": 20000000,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2007,
+      "value": 1000000,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2009,
+      "value": 100000,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2011,
+      "value": 10000,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2014,
+      "value": 1000,
+      "source": "NHGRI Genome Sequencing Costs Data — Illumina HiSeq X Ten era",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2018,
+      "value": 800,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2022,
+      "value": 600,
+      "source": "NHGRI Genome Sequencing Costs Data",
+      "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+    },
+    {
+      "year": 2024,
+      "value": 200,
+      "source": "Illumina NovaSeq X pricing announcements",
+      "source_url": "https://www.illumina.com/systems/sequencing-platforms/novaseq-x-plus.html"
+    },
+    {
+      "year": 2025,
+      "value": 100,
+      "source": "Ultima Genomics / Illumina competitive pricing",
+      "source_url": "https://www.ultimagenomics.com/"
+    }
+  ]
+}

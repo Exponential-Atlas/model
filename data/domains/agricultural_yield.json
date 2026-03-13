@@ -1,0 +1,76 @@
+{
+  "id": "agricultural_yield",
+  "name": "Global Cereal Yield",
+  "description": "Average global cereal crop yield in tonnes per hectare. Tracks improvements from breeding, fertilization, irrigation, precision agriculture, and biotechnology.",
+  "unit": "tonnes/hectare",
+  "direction": "increasing",
+  "category": "Environment",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 20,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1961,
+      "value": 1.35,
+      "source": "FAO / Our World in Data — Global average cereal yield 1961",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 1970,
+      "value": 1.74,
+      "source": "FAO / Our World in Data — Green Revolution gains",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 1980,
+      "value": 2.27,
+      "source": "FAO / Our World in Data — continued Green Revolution adoption",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 1990,
+      "value": 2.77,
+      "source": "FAO / Our World in Data — global cereal yield plateau beginning in some regions",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2000,
+      "value": 3.07,
+      "source": "FAO / Our World in Data — GM crops beginning commercial rollout",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2005,
+      "value": 3.29,
+      "source": "FAO / Our World in Data",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2010,
+      "value": 3.56,
+      "source": "FAO / Our World in Data",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2015,
+      "value": 3.89,
+      "source": "FAO / Our World in Data — precision agriculture adoption accelerating",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2020,
+      "value": 4.07,
+      "source": "FAO / Our World in Data",
+      "source_url": "https://ourworldindata.org/crop-yields"
+    },
+    {
+      "year": 2023,
+      "value": 4.18,
+      "source": "FAOSTAT preliminary data 2023",
+      "source_url": "https://www.fao.org/faostat/en/#data/QCL"
+    }
+  ]
+}

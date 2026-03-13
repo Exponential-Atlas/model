@@ -1,0 +1,128 @@
+{
+  "id": "dna_synthesis",
+  "name": "DNA Synthesis Cost",
+  "description": "Cost per base pair for custom synthetic DNA gene synthesis. Tracks the declining cost driven by array-based synthesis platforms, competition, and emerging enzymatic methods.",
+  "unit": "$/bp",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "medium",
+  "best_fit": "wrights_law",
+  "physical_floor": 0.0001,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.15,
+    "cumulative_production": [
+      {
+        "year": 2000,
+        "value": 1e9,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+      },
+      {
+        "year": 2005,
+        "value": 5e9,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+      },
+      {
+        "year": 2010,
+        "value": 5e10,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.nature.com/articles/nbt.2740"
+      },
+      {
+        "year": 2015,
+        "value": 5e11,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.twistbioscience.com/"
+      },
+      {
+        "year": 2018,
+        "value": 2e12,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.twistbioscience.com/"
+      },
+      {
+        "year": 2020,
+        "value": 8e12,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.synbiobeta.com/read/synthetic-biology-industry-growth"
+      },
+      {
+        "year": 2023,
+        "value": 5e13,
+        "unit": "cumulative base pairs synthesized globally",
+        "source_url": "https://www.twistbioscience.com/"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2000,
+      "value": 10.00,
+      "source": "Carlson Curves — Cost of DNA Synthesis (Rob Carlson)",
+      "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+    },
+    {
+      "year": 2003,
+      "value": 5.00,
+      "source": "Carlson Curves — Blue Heron, GENEART era; prices declining with competition",
+      "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+    },
+    {
+      "year": 2005,
+      "value": 3.00,
+      "source": "Carlson Curves — Cost of DNA Synthesis",
+      "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+    },
+    {
+      "year": 2008,
+      "value": 1.00,
+      "source": "Carlson Curves — GeneArt, DNA2.0, Blue Heron competition driving prices down",
+      "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+    },
+    {
+      "year": 2010,
+      "value": 0.50,
+      "source": "Carlson Curves — Cost of DNA Synthesis; array-based synthesis emerging",
+      "source_url": "https://www.synthesis.cc/synthesis/2016/03/on_dna_and_transistors"
+    },
+    {
+      "year": 2014,
+      "value": 0.25,
+      "source": "Gen9, Twist Bioscience founded — silicon-based synthesis arrays; IDT gBlocks",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    },
+    {
+      "year": 2015,
+      "value": 0.15,
+      "source": "Twist Bioscience / IDT pricing data",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    },
+    {
+      "year": 2017,
+      "value": 0.10,
+      "source": "Twist Bioscience — silicon-platform synthesis reaching $0.07-0.10/bp for clonal genes",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    },
+    {
+      "year": 2020,
+      "value": 0.08,
+      "source": "Twist Bioscience / IDT / GenScript — competitive pricing ~$0.07/bp for standard genes",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    },
+    {
+      "year": 2022,
+      "value": 0.04,
+      "source": "Twist Bioscience, Molecular Assemblies — enzymatic synthesis R&D; competitive pricing approaching $0.04/bp",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    },
+    {
+      "year": 2025,
+      "value": 0.02,
+      "source": "Twist Bioscience / Ansa Biotechnologies — enzymatic DNA synthesis commercializing; prices at $0.02/bp",
+      "source_url": "https://www.twistbioscience.com/products/genes"
+    }
+  ]
+}

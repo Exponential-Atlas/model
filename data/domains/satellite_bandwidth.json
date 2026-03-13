@@ -1,0 +1,66 @@
+{
+  "id": "satellite_bandwidth",
+  "name": "Satellite Internet Bandwidth per Dollar",
+  "description": "Satellite internet throughput per dollar of monthly subscription cost. Tracks progression from legacy GEO satellites through LEO mega-constellations (Starlink, OneWeb, Kuiper).",
+  "unit": "Mbps/$",
+  "direction": "increasing",
+  "category": "Compute",
+  "confidence": "medium",
+  "best_fit": "piecewise",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": {
+    "breakpoint_year": 2019
+  },
+  "data_points": [
+    {
+      "year": 2005,
+      "value": 0.0015,
+      "source": "HughesNet Gen3 — ~1.5 Mbps down for ~$60/mo (GEO satellite broadband)",
+      "source_url": "https://www.hughes.com/"
+    },
+    {
+      "year": 2008,
+      "value": 0.005,
+      "source": "WildBlue / HughesNet Gen4 era — ~5 Mbps for ~$60/mo",
+      "source_url": "https://www.satelliteinternet.com/providers/hughesnet/"
+    },
+    {
+      "year": 2012,
+      "value": 0.02,
+      "source": "ViaSat-1 / HughesNet Gen4 — ~12 Mbps for $60/mo = 0.2, but typical ~5 Mbps usable",
+      "source_url": "https://www.viasat.com/"
+    },
+    {
+      "year": 2017,
+      "value": 0.04,
+      "source": "ViaSat-2 / HughesNet Jupiter — advertised 25 Mbps for $60/mo but typical real-world ~10 Mbps",
+      "source_url": "https://www.viasat.com/space-innovation/satellite-fleet/viasat-2/"
+    },
+    {
+      "year": 2020,
+      "value": 0.5,
+      "source": "Starlink beta — ~50-100 Mbps for $99/mo. Using 50 Mbps conservative avg.",
+      "source_url": "https://www.starlink.com/"
+    },
+    {
+      "year": 2022,
+      "value": 0.8,
+      "source": "Starlink — median ~80 Mbps (Ookla data) for $99-110/mo",
+      "source_url": "https://www.speedtest.net/global-index"
+    },
+    {
+      "year": 2023,
+      "value": 1.2,
+      "source": "Starlink V2 Mini satellites — median download improving to ~100-120 Mbps for $99/mo",
+      "source_url": "https://www.ookla.com/articles/starlink-hughesnet-viasat-q1-2023"
+    },
+    {
+      "year": 2024,
+      "value": 1.5,
+      "source": "Starlink V2 Mini with direct-to-cell — speeds increasing, ~150 Mbps typical for $99/mo (approx)",
+      "source_url": "https://www.starlink.com/"
+    }
+  ]
+}

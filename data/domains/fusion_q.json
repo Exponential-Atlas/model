@@ -1,0 +1,58 @@
+{
+  "id": "fusion_q",
+  "name": "Fusion Energy Q Factor",
+  "description": "Best achieved ratio of fusion energy output to energy input (Q factor). Tracks progress from early tokamaks through NIF ignition and ITER projections. Q > 1 means net energy gain.",
+  "unit": "Q (energy out / energy in)",
+  "direction": "increasing",
+  "category": "Energy",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1983,
+      "value": 0.00002,
+      "source": "Alcator C tokamak at MIT — early confinement experiments achieving very low Q",
+      "source_url": "https://www.iter.org/sci/BeyondITER"
+    },
+    {
+      "year": 1991,
+      "value": 0.12,
+      "source": "JET (Joint European Torus) — first controlled DT fusion, Q~0.12",
+      "source_url": "https://www.euro-fusion.org/devices/jet/"
+    },
+    {
+      "year": 1994,
+      "value": 0.27,
+      "source": "TFTR (Princeton) — achieved Q=0.27 with DT fuel in 1994",
+      "source_url": "https://www.pppl.gov/research/past/tftr"
+    },
+    {
+      "year": 1997,
+      "value": 0.67,
+      "source": "JET — record 16.1 MW fusion power, Q=0.67 with DT fuel",
+      "source_url": "https://www.euro-fusion.org/devices/jet/"
+    },
+    {
+      "year": 2021,
+      "value": 0.33,
+      "source": "NIF — August 2021 shot achieving 1.35 MJ yield vs 1.9 MJ laser input (Q=0.7 of laser, but ~0.33 wall-plug), setting stage for ignition",
+      "source_url": "https://lasers.llnl.gov/science/ignition"
+    },
+    {
+      "year": 2022,
+      "value": 1.54,
+      "source": "NIF — December 5, 2022: first ignition shot. 3.15 MJ yield from 2.05 MJ laser energy. Q=1.54 (laser energy basis)",
+      "source_url": "https://www.llnl.gov/news/national-ignition-facility-achieves-fusion-ignition"
+    },
+    {
+      "year": 2024,
+      "value": 1.9,
+      "source": "NIF — subsequent shots in 2023-2024 achieved up to ~1.9 Q (laser basis); multiple repeat ignition shots confirmed",
+      "source_url": "https://lasers.llnl.gov/science/ignition"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "wind_lcoe",
+  "name": "Wind LCOE",
+  "description": "Levelized cost of electricity from onshore wind installations",
+  "unit": "$/MWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 5,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2009,
+      "value": 135,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2012,
+      "value": 80,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2016,
+      "value": 50,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2018,
+      "value": 42,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2020,
+      "value": 40,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2024,
+      "value": 35,
+      "source": "Lazard Levelized Cost of Energy Analysis v17.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    }
+  ]
+}

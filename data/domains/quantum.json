@@ -1,0 +1,46 @@
+{
+  "id": "quantum",
+  "name": "Logical Qubits",
+  "description": "Number of error-corrected logical qubits demonstrated in quantum computing systems",
+  "unit": "qubits",
+  "direction": "increasing",
+  "category": "Compute",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 100000000,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2016,
+      "value": 1,
+      "source": "IBM Quantum — First cloud-accessible quantum processor",
+      "source_url": "https://research.ibm.com/blog/quantum-computing-ibm"
+    },
+    {
+      "year": 2019,
+      "value": 5,
+      "source": "Google Quantum AI — Sycamore quantum supremacy demonstration (53 physical, ~5 logical equivalent)",
+      "source_url": "https://www.nature.com/articles/s41586-019-1666-5"
+    },
+    {
+      "year": 2021,
+      "value": 10,
+      "source": "IBM Eagle 127-qubit processor / error-correction demonstrations",
+      "source_url": "https://research.ibm.com/blog/127-qubit-quantum-processor-eagle"
+    },
+    {
+      "year": 2023,
+      "value": 48,
+      "source": "Harvard / QuEra — 48 logical qubits with error correction",
+      "source_url": "https://www.nature.com/articles/s41586-023-06927-3"
+    },
+    {
+      "year": 2025,
+      "value": 100,
+      "source": "Google Willow / IBM Heron — error-corrected qubit scaling",
+      "source_url": "https://blog.google/technology/research/google-willow-quantum-chip/"
+    }
+  ]
+}

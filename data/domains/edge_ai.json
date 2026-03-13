@@ -1,0 +1,58 @@
+{
+  "id": "edge_ai",
+  "name": "Edge AI Compute per Dollar",
+  "description": "Peak AI inference performance in tera operations per second per dollar (TOPS/$) for edge/mobile AI accelerators. Tracks chips like Google Edge TPU, Apple Neural Engine, Qualcomm Hexagon, NVIDIA Jetson series.",
+  "unit": "TOPS/$",
+  "direction": "increasing",
+  "category": "Compute",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2016,
+      "value": 0.003,
+      "source": "NVIDIA Jetson TX1 — 1 TOPS for ~$300 module = 0.003 TOPS/$",
+      "source_url": "https://developer.nvidia.com/embedded/jetson-tx1"
+    },
+    {
+      "year": 2018,
+      "value": 0.02,
+      "source": "Google Edge TPU / Coral — 4 TOPS for ~$75 dev board; NVIDIA Jetson Nano approaching; Intel Movidius",
+      "source_url": "https://coral.ai/products/dev-board/"
+    },
+    {
+      "year": 2019,
+      "value": 0.05,
+      "source": "NVIDIA Jetson Nano — 0.5 TFLOPS FP16 for $99; Coral USB Accelerator 4 TOPS for $60",
+      "source_url": "https://developer.nvidia.com/embedded/jetson-nano-developer-kit"
+    },
+    {
+      "year": 2020,
+      "value": 0.1,
+      "source": "NVIDIA Jetson Xavier NX — 21 TOPS for $199 module = 0.1 TOPS/$",
+      "source_url": "https://developer.nvidia.com/embedded/jetson-xavier-nx"
+    },
+    {
+      "year": 2022,
+      "value": 0.3,
+      "source": "NVIDIA Jetson Orin Nano — 40 TOPS for $199 = 0.2 TOPS/$; Orin NX 100 TOPS for $399",
+      "source_url": "https://developer.nvidia.com/embedded/jetson-orin"
+    },
+    {
+      "year": 2023,
+      "value": 0.5,
+      "source": "Hailo-8L — 13 TOPS for ~$30; various edge NPUs in phones (Snapdragon 8 Gen 3: 45 TOPS built-in to $500 phones)",
+      "source_url": "https://hailo.ai/products/hailo-8/"
+    },
+    {
+      "year": 2024,
+      "value": 0.8,
+      "source": "NVIDIA Jetson Orin Nano Super — 67 TOPS for $249 = 0.27 TOPS/$; Hailo-10H 40 TOPS for ~$50; phone NPUs reaching 45+ TOPS in $300 devices (approx best available)",
+      "source_url": "https://developer.nvidia.com/embedded/jetson-orin"
+    }
+  ]
+}

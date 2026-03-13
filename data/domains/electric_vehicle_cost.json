@@ -1,0 +1,78 @@
+{
+  "id": "electric_vehicle_cost",
+  "name": "Average Electric Vehicle Purchase Price",
+  "description": "Average transaction price for a new battery electric vehicle (BEV) in the United States. Tracks overall EV affordability driven by battery cost reductions, manufacturing scale, and increasing model diversity.",
+  "unit": "$",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "piecewise",
+  "physical_floor": 5000,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": {
+    "breakpoint_year": 2022
+  },
+  "data_points": [
+    {
+      "year": 2012,
+      "value": 38000,
+      "source": "Kelley Blue Book / DOE — Nissan Leaf, Tesla Model S early sales; weighted average ~$38K",
+      "source_url": "https://www.energy.gov/eere/vehicles/articles/fotw-1272-january-9-2023-electric-vehicle-average-transaction-price"
+    },
+    {
+      "year": 2014,
+      "value": 37000,
+      "source": "KBB/Cox Automotive — limited BEV selection, mostly Leaf and Model S",
+      "source_url": "https://www.kbb.com/electric-cars/"
+    },
+    {
+      "year": 2016,
+      "value": 39000,
+      "source": "KBB/Cox Automotive — Chevrolet Bolt introduction; Tesla Model 3 not yet available",
+      "source_url": "https://www.kbb.com/electric-cars/"
+    },
+    {
+      "year": 2018,
+      "value": 44000,
+      "source": "KBB/Cox Automotive — Tesla Model 3 initially at higher trims driving average up",
+      "source_url": "https://www.kbb.com/electric-cars/"
+    },
+    {
+      "year": 2019,
+      "value": 42000,
+      "source": "KBB/Cox Automotive — Model 3 Standard Range available, bringing average down slightly",
+      "source_url": "https://www.coxautoinc.com/market-insights/kbb-average-transaction-price/"
+    },
+    {
+      "year": 2020,
+      "value": 45000,
+      "source": "KBB/Cox Automotive — EV average transaction price rising with luxury EV launches",
+      "source_url": "https://www.coxautoinc.com/market-insights/kbb-average-transaction-price/"
+    },
+    {
+      "year": 2021,
+      "value": 53000,
+      "source": "KBB/Cox Automotive — chip shortage and high demand driving prices up across industry",
+      "source_url": "https://www.coxautoinc.com/market-insights/kbb-average-transaction-price/"
+    },
+    {
+      "year": 2022,
+      "value": 65000,
+      "source": "KBB/Cox Automotive — peak EV pricing: average BEV transaction price reached ~$65K (July 2022)",
+      "source_url": "https://www.energy.gov/eere/vehicles/articles/fotw-1272-january-9-2023-electric-vehicle-average-transaction-price"
+    },
+    {
+      "year": 2023,
+      "value": 50000,
+      "source": "KBB/Cox Automotive — Tesla price cuts, increased competition, BEV average dropping to ~$50K",
+      "source_url": "https://www.coxautoinc.com/market-insights/kbb-average-transaction-price/"
+    },
+    {
+      "year": 2024,
+      "value": 44000,
+      "source": "KBB/Cox Automotive — continued price competition, more affordable models (Equinox EV, Model 3 Highland), average ~$44K (approx)",
+      "source_url": "https://www.kbb.com/electric-cars/"
+    }
+  ]
+}

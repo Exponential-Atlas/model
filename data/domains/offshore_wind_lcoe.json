@@ -1,0 +1,122 @@
+{
+  "id": "offshore_wind_lcoe",
+  "name": "Offshore Wind LCOE",
+  "description": "Levelized cost of energy for offshore wind power projects. Captures cost declines driven by larger turbines, improved installation methods, and supply chain maturation.",
+  "unit": "$/MWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": 10,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.10,
+    "cumulative_production": [
+      {
+        "year": 2010,
+        "value": 3.1,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+      },
+      {
+        "year": 2013,
+        "value": 6.5,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+      },
+      {
+        "year": 2015,
+        "value": 12,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://gwec.net/global-offshore-wind-report-2023/"
+      },
+      {
+        "year": 2017,
+        "value": 18,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://gwec.net/global-offshore-wind-report-2023/"
+      },
+      {
+        "year": 2019,
+        "value": 28,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://gwec.net/global-offshore-wind-report-2023/"
+      },
+      {
+        "year": 2021,
+        "value": 51,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://gwec.net/global-offshore-wind-report-2023/"
+      },
+      {
+        "year": 2023,
+        "value": 73,
+        "unit": "cumulative GW offshore wind installed globally",
+        "source_url": "https://gwec.net/global-offshore-wind-report-2024/"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2010,
+      "value": 178,
+      "source": "IRENA Renewable Power Generation Costs 2022 (historical offshore wind)",
+      "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+    },
+    {
+      "year": 2012,
+      "value": 172,
+      "source": "IRENA Renewable Power Generation Costs — early European offshore projects",
+      "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+    },
+    {
+      "year": 2014,
+      "value": 165,
+      "source": "IRENA Renewable Power Generation Costs — stabilizing at high levels",
+      "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+    },
+    {
+      "year": 2016,
+      "value": 140,
+      "source": "IRENA/BNEF — first major CfD auctions driving competition",
+      "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+    },
+    {
+      "year": 2018,
+      "value": 102,
+      "source": "IRENA Renewable Power Generation Costs 2019 — dramatic auction price decline",
+      "source_url": "https://www.irena.org/publications/2020/Jun/Renewable-Power-Costs-in-2019"
+    },
+    {
+      "year": 2019,
+      "value": 89,
+      "source": "IRENA Renewable Power Generation Costs 2020 — record low bids in UK, Netherlands",
+      "source_url": "https://www.irena.org/publications/2021/Jun/Renewable-Power-Costs-in-2020"
+    },
+    {
+      "year": 2020,
+      "value": 84,
+      "source": "IRENA Renewable Power Generation Costs 2021",
+      "source_url": "https://www.irena.org/publications/2022/Jul/Renewable-Power-Generation-Costs-in-2021"
+    },
+    {
+      "year": 2021,
+      "value": 75,
+      "source": "IRENA Renewable Power Generation Costs 2022",
+      "source_url": "https://www.irena.org/publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022"
+    },
+    {
+      "year": 2022,
+      "value": 80,
+      "source": "BNEF — slight increase due to supply chain inflation and steel costs",
+      "source_url": "https://about.bnef.com/blog/2h-2022-offshore-wind-market-outlook/"
+    },
+    {
+      "year": 2023,
+      "value": 75,
+      "source": "IRENA Renewable Power Generation Costs 2023 — global weighted average returning to decline",
+      "source_url": "https://www.irena.org/publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    }
+  ]
+}

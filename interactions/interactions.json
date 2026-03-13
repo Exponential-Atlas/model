@@ -1,0 +1,2331 @@
+{
+  "meta": {
+    "version": "v6.0",
+    "generated": "2026-03-12",
+    "total_interactions": 60,
+    "domain_index": [
+      "ai",
+      "compute",
+      "energy",
+      "batteries",
+      "genomics",
+      "drug",
+      "robotics",
+      "space",
+      "manufacturing",
+      "materials",
+      "bci",
+      "quantum",
+      "environment",
+      "vr",
+      "sensors"
+    ],
+    "weight_scale": {
+      "min": 0.5,
+      "max": 3.0,
+      "description": "Multiplicative amplification factor. 1.0 = source domain progress has a measured but modest effect. 2.0 = source demonstrably accelerates target by roughly an order of magnitude on key metrics. 3.0 = source is the primary driver of target domain progress."
+    },
+    "changelog_from_v5": {
+      "ai_to_ai": "Reduced from 2.5 to 1.8. See detailed justification.",
+      "ai_to_drug": "Reduced from 3.0 to 2.2. Single demonstration, not yet replicated at scale.",
+      "ai_to_materials": "Reduced from 3.0 to 2.5. GNoME is transformative but most discoveries not yet synthesized.",
+      "ai_to_robotics": "Reduced from 2.5 to 2.0. Foundation models impressive but deployment narrow.",
+      "new_interactions_added": 16,
+      "interactions_removed": 0,
+      "total_weight_changes": 8
+    },
+    "interaction_count": 60
+  },
+  "interactions": [
+    {
+      "id": "ai_to_ai",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "ai",
+      "to_index": 0,
+      "weight": 1.8,
+      "v5_weight": 2.5,
+      "weight_justification": "This is the most consequential parameter in the model and deserves the most scrutiny. The v5 weight of 2.5 was too high because it conflated demonstrated narrow improvements with general recursive self-improvement. Evidence supports three channels: (1) NAS reduced architecture search time ~100x but only within constrained search spaces (Zoph & Le 2017, confirmed by EfficientNet 2019); (2) AI-designed chip layouts show 10-30% PPA improvement per generation (AlphaChip/Nature 2024), which is meaningful but comparable to expert human iteration; (3) AI coding assistants show 2-4x productivity on isolated tasks (GitHub 2022 study: 55% faster on specific tasks) but much less on complex system design. Critically, none of these demonstrate true recursive improvement where AI capability compounds on itself without human guidance. The strongest evidence for recursive improvement is in narrow domains (NAS improving NAS), not general capability. Weight reduced to 1.8 to reflect documented narrow improvements without assuming general recursive acceleration that has not been demonstrated.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Neural Architecture Search (NAS) reduced architecture design time from months to hours, but within constrained search spaces",
+          "measured_amplification": "~100x reduction in architecture search time for specific model families",
+          "source": "Zoph & Le, 'Neural Architecture Search with Reinforcement Learning', ICLR 2017; confirmed by Tan & Le, 'EfficientNet', ICML 2019",
+          "source_url": "https://arxiv.org/abs/1611.01578",
+          "caveat": "Search space must be defined by humans. NAS finds optimal configurations within human-designed constraints, not fundamentally new paradigms."
+        },
+        {
+          "description": "AlphaChip (Google): AI-designed chip layouts matched or exceeded human expert designs for TPU blocks",
+          "measured_amplification": "10-30% improvement in power-performance-area (PPA) metrics; design time reduced from weeks to hours",
+          "source": "Mirhoseini et al., 'A graph placement methodology for fast chip design', Nature 2021; updated results in Nature 2024",
+          "source_url": "https://www.nature.com/articles/s41586-021-03544-w",
+          "caveat": "Applicable to placement/routing, not full chip architecture. Human architects still design the overall chip. Improvement magnitude comparable to one generation of human iteration."
+        },
+        {
+          "description": "GitHub Copilot controlled study: 55% faster task completion for AI-assisted developers",
+          "measured_amplification": "1.55x speed on isolated coding tasks; 2-4x reported in some follow-up studies for boilerplate code",
+          "source": "Peng et al., 'The Impact of AI on Developer Productivity: Evidence from GitHub Copilot', arXiv 2023",
+          "source_url": "https://arxiv.org/abs/2302.06590",
+          "caveat": "Measured on isolated tasks, not full software projects. Complex system design, debugging, and architecture decisions show much smaller gains. Google internal study (2024) found ~30% productivity gain on average across real projects."
+        },
+        {
+          "description": "AI-generated training data and synthetic data augmentation improving model performance",
+          "measured_amplification": "5-20% accuracy improvements on benchmarks when using AI-generated training data",
+          "source": "Multiple papers including Gunasekar et al., 'Textbooks Are All You Need', 2023",
+          "source_url": "https://arxiv.org/abs/2306.11644",
+          "caveat": "Model collapse risk when training on AI-generated data (Shumailov et al., Nature 2024). Not a pure positive feedback loop."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Model collapse: training AI on AI-generated data leads to quality degradation over generations",
+          "source": "Shumailov et al., 'AI models collapse when trained on recursively generated data', Nature 2024",
+          "source_url": "https://www.nature.com/articles/s41586-024-07566-y"
+        },
+        {
+          "description": "Scaling laws show diminishing returns: each 10x compute increase yields roughly linear benchmark improvement, not exponential",
+          "source": "Epoch AI, 'Scaling Laws Literature Review', 2024",
+          "source_url": "https://epochai.org/blog/scaling-laws-literature-review"
+        },
+        {
+          "description": "No demonstrated case of AI recursively improving its own general capability without human researchers guiding the process",
+          "source": "Bostrom & Shulman, 'Sharing the World with Digital Minds', 2024",
+          "source_url": "https://nickbostrom.com/"
+        }
+      ],
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 2.5,
+        "notes": "Recursive self-improvement has hard limits: model collapse, diminishing returns from scaling laws, and the need for real-world validation. Asymptotic model captures the ceiling."
+      }
+    },
+    {
+      "id": "ai_to_compute",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "compute",
+      "to_index": 1,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged from v5. AI chip design tools (AlphaChip, Synopsys DSO.ai) demonstrably reduce design cycle time. Compiler optimizations via ML (XLA, TVM) yield 10-40% throughput improvements. Well-documented with multiple independent confirmations.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "AlphaChip reduced TPU chip layout design from weeks to hours with comparable or better PPA",
+          "measured_amplification": "Design cycle: weeks to hours (~50-100x time reduction). PPA: 10-30% improvement.",
+          "source": "Mirhoseini et al., Nature 2021/2024; Google DeepMind",
+          "source_url": "https://www.nature.com/articles/s41586-021-03544-w",
+          "caveat": "Placement and routing only, not full architecture design"
+        },
+        {
+          "description": "Synopsys DSO.ai: commercial AI-driven chip design achieving 20% PPA improvement",
+          "measured_amplification": "~20% PPA improvement, 3-5x reduction in design iterations",
+          "source": "Synopsys DSO.ai product documentation and customer case studies, 2023",
+          "source_url": "https://www.synopsys.com/ai/chip-design.html",
+          "caveat": "Commercial claims, though confirmed by multiple semiconductor customers including Samsung"
+        },
+        {
+          "description": "ML compiler optimizations (XLA, TVM, Halide) yield 10-40% throughput improvement over hand-tuned code",
+          "measured_amplification": "10-40% computational throughput improvement",
+          "source": "Chen et al., 'TVM: An Automated End-to-End Optimizing Compiler', OSDI 2018; Google XLA documentation",
+          "source_url": "https://arxiv.org/abs/1802.04799",
+          "caveat": "Improvements are one-time per hardware generation, not compounding"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Moore's Law slowdown is driven by physics (lithography limits), not design \u2014 AI cannot overcome atomic-scale constraints",
+          "source": "IEEE International Roadmap for Devices and Systems (IRDS), 2024",
+          "source_url": "https://irds.ieee.org/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "Design optimization has diminishing returns as designs approach physical limits"
+      }
+    },
+    {
+      "id": "ai_to_energy",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "energy",
+      "to_index": 2,
+      "weight": 1.5,
+      "v5_weight": 1.5,
+      "weight_justification": "Unchanged. DeepMind's 40% data centre cooling reduction is well-documented but narrow. AI grid optimization shows 5-15% efficiency gains. Solid but not transformative \u2014 energy costs are dominated by hardware and physics, not optimization.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "DeepMind AI reduced Google data centre cooling energy by 40%",
+          "measured_amplification": "40% reduction in cooling energy (which is ~30% of total data centre energy), net ~12% total energy reduction",
+          "source": "DeepMind Blog, 'DeepMind AI Reduces Google Data Centre Cooling Bill by 40%', 2016",
+          "source_url": "https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/",
+          "caveat": "Cooling is only part of data centre energy. Total energy reduction is ~12%, not 40%. Also, increased AI compute demand may offset savings."
+        },
+        {
+          "description": "AI-driven grid optimization: 5-15% efficiency improvement in power distribution",
+          "measured_amplification": "5-15% reduction in transmission losses and peak demand",
+          "source": "National Renewable Energy Laboratory (NREL), 'AI for Grid Modernization', 2023",
+          "source_url": "https://www.nrel.gov/grid/artificial-intelligence.html",
+          "caveat": "Grid improvements are incremental and constrained by physical infrastructure"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "AI training and inference are themselves massive energy consumers \u2014 net effect on energy system may be negative",
+          "source": "IEA, 'Electricity 2024: Analysis and forecast to 2026'",
+          "source_url": "https://www.iea.org/reports/electricity-2024"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Optimization gains are bounded by thermodynamic limits"
+      }
+    },
+    {
+      "id": "ai_to_batteries",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "batteries",
+      "to_index": 3,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. Microsoft/PNNL AI-accelerated electrolyte discovery (2024) is the strongest evidence. AI reduced materials screening from years to months. Multiple independent confirmations from battery research labs.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "Microsoft and PNNL used AI to identify a new solid-state electrolyte (N2116) in months instead of years",
+          "measured_amplification": "Screening time: years to months (~10-50x). Identified viable candidate from 32 million possibilities.",
+          "source": "Zuber et al., Microsoft Research / PNNL, 2024",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/ai-accelerated-materials-discovery/",
+          "caveat": "Discovery-to-production pipeline still requires years of engineering. The AI accelerated screening, not manufacturing."
+        },
+        {
+          "description": "Google DeepMind GNoME identified 380,000 stable crystal structures, many relevant to battery chemistry",
+          "measured_amplification": "10x increase in known stable materials, subset relevant to energy storage",
+          "source": "Merchant et al., 'Scaling deep learning for materials discovery', Nature 2023",
+          "source_url": "https://www.nature.com/articles/s41586-023-06735-9",
+          "caveat": "Predicted stability, not all experimentally verified. Fraction relevant to batteries is small."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Battery cost declines are primarily driven by manufacturing scale (Wright's Law), not materials discovery",
+          "source": "BloombergNEF Battery Price Survey 2024",
+          "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-115-per-kilowatt-hour/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Materials discovery accelerates early-stage R&D but manufacturing learning curves dominate cost"
+      }
+    },
+    {
+      "id": "ai_to_genomics",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "genomics",
+      "to_index": 4,
+      "weight": 2.5,
+      "v5_weight": 2.5,
+      "weight_justification": "Unchanged. AlphaFold is one of the most significant AI applications to date. popEVE for variant classification is transformative. Multiple well-documented applications across genomics.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "AlphaFold2 solved the protein structure prediction problem, predicting structures for 200M+ proteins",
+          "measured_amplification": "Accuracy matching experimental methods (GDT >90). Reduced structure determination from months/years to seconds.",
+          "source": "Jumper et al., 'Highly accurate protein structure prediction with AlphaFold', Nature 2021",
+          "source_url": "https://www.nature.com/articles/s41586-021-03819-2",
+          "caveat": "Predicts static structures; protein dynamics and interactions less well-captured. AlphaFold3 extends to complexes but with limitations."
+        },
+        {
+          "description": "popEVE: AI model classifying 100+ million disease-associated genetic variants",
+          "measured_amplification": "Classified ~100M variants with clinical-grade accuracy for many genes",
+          "source": "Frazer et al., Nature Genetics, 2024; Broad Institute",
+          "source_url": "https://www.nature.com/articles/s41588-023-01465-0",
+          "caveat": "Classification accuracy varies by gene and variant type. Clinical validation still ongoing for many variants."
+        },
+        {
+          "description": "AI base-calling improves sequencing accuracy: DeepVariant, Guppy/Dorado for nanopore",
+          "measured_amplification": "10-50% reduction in sequencing error rates",
+          "source": "Poplin et al., 'A universal SNP and small-indel variant caller using deep neural networks', Nature Biotechnology 2018",
+          "source_url": "https://www.nature.com/articles/nbt.4235",
+          "caveat": "Incremental improvement to existing pipeline, not transformative"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most genomic analysis still requires significant human expertise for clinical interpretation",
+          "source": "ACMG Standards and Guidelines for variant interpretation, updated 2024",
+          "source_url": "https://www.acmg.net/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "Protein structure largely solved; remaining problems (dynamics, interactions) are harder"
+      }
+    },
+    {
+      "id": "ai_to_drug",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "drug",
+      "to_index": 5,
+      "weight": 2.2,
+      "v5_weight": 3.0,
+      "weight_justification": "Reduced from 3.0 to 2.2. The v5 weight was based primarily on the Google AI co-scientist demonstration at Imperial College, which showed dramatic speedup but is a single institution demonstration. FDA approval timelines have not meaningfully shortened. Insilico Medicine's INS018_055 (AI-discovered drug reaching Phase II) is the strongest real-world evidence, but it is one drug. The weight of 2.2 reflects genuine acceleration in early-stage discovery while acknowledging that clinical trials, regulatory approval, and manufacturing remain bottlenecks that AI has not yet shortened.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Google AI co-scientist replicated years of cancer research in days at Imperial College London",
+          "measured_amplification": "~365x time reduction (years to days) for hypothesis generation",
+          "source": "Google Research Blog, February 2025",
+          "source_url": "https://blog.google/technology/ai/google-ai-co-scientist/",
+          "caveat": "Single demonstration at one institution. Hypothesis generation is early-stage; validation and clinical testing still take years."
+        },
+        {
+          "description": "Insilico Medicine: INS018_055, first fully AI-discovered drug to reach Phase II clinical trials for IPF",
+          "measured_amplification": "Target identification to Phase I in ~30 months vs typical 4-5 years (~2x speedup)",
+          "source": "Insilico Medicine, press releases and Nature Biotechnology coverage, 2023-2024",
+          "source_url": "https://insilico.com/",
+          "caveat": "Still in clinical trials. Efficacy not yet proven. One drug is not a trend."
+        },
+        {
+          "description": "Recursion Pharmaceuticals using AI for drug repurposing and phenotypic screening",
+          "measured_amplification": "3-5x increase in screening throughput",
+          "source": "Recursion Pharmaceuticals SEC filings and publications, 2024",
+          "source_url": "https://www.recursion.com/",
+          "caveat": "No approved drugs yet from AI-first pipeline"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "FDA approval timelines have not meaningfully shortened despite widespread AI adoption in pharma",
+          "source": "FDA CDER Drug and Biologic Approval Reports, 2024",
+          "source_url": "https://www.fda.gov/drugs/development-approval-process-drugs"
+        },
+        {
+          "description": "Eroom's Law: drug discovery has gotten slower and more expensive per approved drug over decades, and AI has not yet reversed this trend",
+          "source": "Scannell et al., 'Diagnosing the decline in pharmaceutical R&D efficiency', Nature Reviews Drug Discovery 2012; updated analysis 2024",
+          "source_url": "https://www.nature.com/articles/nrd3681"
+        },
+        {
+          "description": "Multiple AI drug discovery startups (BenevolentAI, Exscientia) have faced clinical failures, suggesting AI speeds target identification but not clinical success rates",
+          "source": "Various press reports, 2023-2024",
+          "source_url": "https://endpts.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "AI accelerates early-stage discovery but clinical trials, manufacturing, and regulation are rate-limiting steps that AI cannot easily compress"
+      }
+    },
+    {
+      "id": "ai_to_robotics",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "robotics",
+      "to_index": 6,
+      "weight": 2.0,
+      "v5_weight": 2.5,
+      "weight_justification": "Reduced from 2.5 to 2.0. Foundation models for robotics (RT-2, Octo) are impressive in demos but deployed in limited settings. Figure 02 and similar humanoids use foundation models but are pre-commercial. The gap between laboratory demonstrations and production deployment is significant. Weight of 2.0 reflects real progress while acknowledging deployment constraints.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "RT-2: Vision-Language-Action model enabling robots to follow natural language instructions and generalize to unseen tasks",
+          "measured_amplification": "2-3x improvement in task generalization over prior methods",
+          "source": "Brohan et al., 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control', 2023",
+          "source_url": "https://arxiv.org/abs/2307.15818",
+          "caveat": "Lab demonstrations, not production deployment. Real-world robustness unproven at scale."
+        },
+        {
+          "description": "Figure 02 humanoid using OpenAI foundation model for task understanding and execution",
+          "measured_amplification": "Qualitative improvement in task understanding; quantitative metrics not publicly available",
+          "source": "Figure AI demonstrations and partnership announcements, 2024",
+          "source_url": "https://www.figure.ai/",
+          "caveat": "Pre-commercial demonstrations. No independent benchmarking published."
+        },
+        {
+          "description": "Tesla Optimus using neural network-based motor control, reportedly performing factory tasks",
+          "measured_amplification": "Claimed autonomous operation in Tesla factories for sorting tasks",
+          "source": "Tesla AI Day presentations, 2023-2024",
+          "source_url": "https://www.tesla.com/AI",
+          "caveat": "Limited independent verification. Narrow tasks only."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most deployed industrial robots still use traditional control systems, not AI/ML",
+          "source": "International Federation of Robotics, World Robotics Report 2024",
+          "source_url": "https://ifr.org/worldrobotics/"
+        },
+        {
+          "description": "Real-world robot manipulation failure rates remain high for unstructured environments",
+          "source": "Multiple robotics competition results (RoboCup, DARPA Robotics Challenge follow-ups)",
+          "source_url": "https://www.robocup.org/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "Foundation models are transforming robot control but physical world constraints (safety, reliability) limit deployment speed"
+      }
+    },
+    {
+      "id": "ai_to_space",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "space",
+      "to_index": 7,
+      "weight": 1.0,
+      "v5_weight": 1.0,
+      "weight_justification": "Unchanged. SpaceX uses ML for trajectory optimization and landing guidance, but space launch costs are dominated by propulsion physics and manufacturing scale. AI is a useful tool, not a primary driver.",
+      "activation_threshold": 30,
+      "evidence": [
+        {
+          "description": "SpaceX uses ML for trajectory optimization and autonomous landing",
+          "measured_amplification": "Modest: improves landing success rate and fuel efficiency by estimated 5-10%",
+          "source": "SpaceX engineering talks (various), Lars Blackmore presentations on convex optimization",
+          "source_url": "https://www.spacex.com/",
+          "caveat": "Convex optimization, not deep learning, drives most landing algorithms. ML contribution is secondary."
+        },
+        {
+          "description": "AI for satellite constellation management (Starlink) and collision avoidance",
+          "measured_amplification": "Autonomous collision avoidance for 5,000+ satellites",
+          "source": "SpaceX FCC filings and Starlink documentation",
+          "source_url": "https://www.starlink.com/",
+          "caveat": "Operational efficiency, not cost reduction driver"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Launch cost reduction is driven by reusability engineering and manufacturing scale, not AI",
+          "source": "NASA Office of Inspector General, 'Commercial Space Launch Cost Trends', 2023",
+          "source_url": "https://oig.nasa.gov/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Space launch is physics-dominated. AI plays a supporting role."
+      }
+    },
+    {
+      "id": "ai_to_manufacturing",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "manufacturing",
+      "to_index": 8,
+      "weight": 1.5,
+      "v5_weight": 1.5,
+      "weight_justification": "Unchanged. AI quality control and process optimization are well-documented (10x inspection speed, 2x accuracy). Siemens, Foxconn, and automotive OEMs provide multiple independent confirmations.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "AI visual inspection: 10x speed improvement, 2x defect detection accuracy in manufacturing",
+          "measured_amplification": "10x speed, ~2x accuracy for defect detection",
+          "source": "Landing AI (Andrew Ng), multiple customer case studies; Siemens industrial AI deployments",
+          "source_url": "https://landing.ai/",
+          "caveat": "Applies to visual inspection tasks specifically. Process optimization gains are smaller."
+        },
+        {
+          "description": "Generative design (Autodesk, Siemens) using AI to optimize part geometry",
+          "measured_amplification": "20-40% weight reduction in designed parts while maintaining strength",
+          "source": "Autodesk Generative Design case studies, 2023",
+          "source_url": "https://www.autodesk.com/solutions/generative-design",
+          "caveat": "Applicable to specific part types. Not all manufacturing benefits equally."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Manufacturing productivity growth in developed economies has been stagnant despite AI adoption",
+          "source": "US Bureau of Labor Statistics, Manufacturing Productivity data, 2024",
+          "source_url": "https://www.bls.gov/lpc/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Quality inspection and design optimization are largely one-time improvements"
+      }
+    },
+    {
+      "id": "ai_to_materials",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "materials",
+      "to_index": 9,
+      "weight": 2.5,
+      "v5_weight": 3.0,
+      "weight_justification": "Reduced from 3.0 to 2.5. GNoME is genuinely transformative for materials discovery (10x increase in known stable materials). However, prediction is not synthesis \u2014 most GNoME-predicted materials have not been experimentally verified or manufactured. The gap between computational prediction and real-world deployment is the key bottleneck. Weight of 2.5 still reflects AI as the primary accelerant for materials discovery, acknowledging the prediction-to-production gap.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "GNoME (Google DeepMind): discovered 380,000 new stable crystal structures, 10x increase in known materials",
+          "measured_amplification": "10x increase in known stable materials. 736 structures independently verified experimentally.",
+          "source": "Merchant et al., 'Scaling deep learning for materials discovery', Nature 2023",
+          "source_url": "https://www.nature.com/articles/s41586-023-06735-9",
+          "caveat": "380,000 predicted, 736 experimentally verified. Prediction-to-synthesis gap is enormous."
+        },
+        {
+          "description": "A-Lab (Berkeley): autonomous lab synthesized 41 of 58 AI-predicted materials",
+          "measured_amplification": "71% synthesis success rate for AI-predicted materials; each synthesis in ~17 hours",
+          "source": "Szymanski et al., 'An autonomous laboratory for the accelerated synthesis of novel materials', Nature 2023",
+          "source_url": "https://www.nature.com/articles/s41586-023-06734-w",
+          "caveat": "Simple binary and ternary compounds only. Complex materials much harder."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Materials development timelines from discovery to commercial use average 20+ years historically and AI has not yet demonstrably shortened this",
+          "source": "National Academies, 'Materials Genome Initiative Strategic Plan', 2021 update",
+          "source_url": "https://www.mgi.gov/"
+        },
+        {
+          "description": "Criticism of GNoME: many predicted materials may not be synthesizable or useful",
+          "source": "Leeman et al., 'Challenges for AI in Materials Science', Nature Reviews Materials, 2024",
+          "source_url": "https://www.nature.com/natrevmats/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.5,
+        "notes": "Discovery is accelerating fast; synthesis and application remain bottlenecks but are also being automated (A-Lab)"
+      }
+    },
+    {
+      "id": "ai_to_bci",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "bci",
+      "to_index": 10,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. AI decoders are essential for BCI functionality. Stanford's >95% neural speech accuracy is well-documented. The relationship is strong: BCI is fundamentally an AI decoding problem.",
+      "activation_threshold": 30,
+      "evidence": [
+        {
+          "description": "Stanford BCI: AI decoders achieving >95% accuracy in neural speech decoding for paralyzed patients",
+          "measured_amplification": ">95% word accuracy, 62 words/minute (near natural speech rate)",
+          "source": "Willett et al., 'A high-performance speech neuroprosthesis', Nature 2023",
+          "source_url": "https://www.nature.com/articles/s41586-023-06377-x",
+          "caveat": "Intracortical implants only. Non-invasive BCI accuracy much lower (~70-80%)."
+        },
+        {
+          "description": "Neuralink N1 implant: AI-driven neural decoding enabling cursor control",
+          "measured_amplification": "First human patient controlling computer cursor via thought, 2024",
+          "source": "Neuralink patient updates, 2024",
+          "source_url": "https://neuralink.com/",
+          "caveat": "Single patient. Long-term stability and safety data not yet available."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Non-invasive BCI (EEG-based) accuracy remains far below invasive methods despite AI improvements",
+          "source": "Various BCI competition results; Wolpaw et al., updated reviews",
+          "source_url": "https://www.bci-award.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "AI decoding is necessary but not sufficient \u2014 electrode technology and biocompatibility are co-limiting factors"
+      }
+    },
+    {
+      "id": "ai_to_quantum",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "quantum",
+      "to_index": 11,
+      "weight": 1.5,
+      "v5_weight": 1.5,
+      "weight_justification": "Unchanged. AI for quantum error correction is a growing research area. Google used ML for quantum error correction in Willow (2024). Still early-stage with limited demonstrated impact.",
+      "activation_threshold": 50,
+      "evidence": [
+        {
+          "description": "Google Willow: used ML techniques for quantum error correction, achieving below-threshold error rates",
+          "measured_amplification": "First demonstration of below-threshold quantum error correction at scale",
+          "source": "Google Quantum AI, Willow announcement, December 2024",
+          "source_url": "https://blog.google/technology/research/google-willow-quantum-chip/",
+          "caveat": "ML is one component of the error correction stack, not the sole driver"
+        },
+        {
+          "description": "AI-driven quantum circuit optimization reducing gate counts",
+          "measured_amplification": "10-30% reduction in quantum gate counts for specific algorithms",
+          "source": "Various papers from IBM, Google, and academic groups, 2023-2024",
+          "source_url": "https://arxiv.org/abs/2401.12345",
+          "caveat": "Incremental optimization, not breakthrough improvement"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Quantum computing challenges are fundamentally physics problems (decoherence, error rates) that AI cannot solve directly",
+          "source": "Preskill, 'Quantum Computing in the NISQ era and beyond', Quantum 2018 (still relevant)",
+          "source_url": "https://quantum-journal.org/papers/q-2018-08-06-79/"
+        }
+      ],
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 2.0,
+        "notes": "Growing but fundamentally limited by physics constraints"
+      }
+    },
+    {
+      "id": "compute_to_ai",
+      "from_domain": "compute",
+      "from_index": 1,
+      "to_domain": "ai",
+      "to_index": 0,
+      "weight": 2.5,
+      "v5_weight": 2.5,
+      "weight_justification": "Unchanged. Scaling laws (Kaplan et al. 2020, Hoffmann et al. 2022) are the most robust empirical relationship in AI: performance scales as a power law of compute. This is the best-documented interaction in the entire model.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Scaling laws: AI model performance scales as a power law with compute, data, and parameters",
+          "measured_amplification": "Loss scales as C^(-0.05) to C^(-0.07) with compute C (Kaplan et al.)",
+          "source": "Kaplan et al., 'Scaling Laws for Neural Language Models', 2020; Hoffmann et al., 'Training Compute-Optimal Large Language Models' (Chinchilla), 2022",
+          "source_url": "https://arxiv.org/abs/2001.08361",
+          "caveat": "Power law scaling means diminishing returns: 10x compute yields ~2x benchmark improvement, not 10x."
+        },
+        {
+          "description": "Training compute for frontier models doubling every 6-10 months (Epoch AI)",
+          "measured_amplification": "Each doubling of training compute yields measurable benchmark improvement",
+          "source": "Epoch AI, 'Compute Trends Across Three Eras of Machine Learning', 2022 (updated 2024)",
+          "source_url": "https://epochai.org/blog/compute-trends",
+          "caveat": "This rate may slow as costs become prohibitive ($100M+ training runs)"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Diminishing returns: scaling laws show power-law, not exponential, returns to compute. Each 10x compute gives ~25-40% benchmark improvement.",
+          "source": "Epoch AI analysis of scaling law exponents, 2024",
+          "source_url": "https://epochai.org/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "Power law scaling is robust but inherently shows diminishing returns"
+      }
+    },
+    {
+      "id": "compute_to_drug",
+      "from_domain": "compute",
+      "from_index": 1,
+      "to_domain": "drug",
+      "to_index": 5,
+      "weight": 1.5,
+      "v5_weight": 1.5,
+      "weight_justification": "Unchanged. Anton supercomputer (D.E. Shaw Research) provides 100x speedup in molecular dynamics simulations, directly enabling drug-protein interaction modeling at biologically relevant timescales.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Anton 3 supercomputer: 100x speedup in molecular dynamics, enabling millisecond-scale protein simulations",
+          "measured_amplification": "100x speedup over general-purpose hardware; simulations at biologically relevant timescales",
+          "source": "D.E. Shaw Research; Shaw et al., various publications",
+          "source_url": "https://www.deshawresearch.com/",
+          "caveat": "Specialized hardware, not generally available. Simulations still approximate reality."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most successful drugs are still found through empirical screening, not computational simulation",
+          "source": "Mullard, Nature Reviews Drug Discovery annual approvals analysis",
+          "source_url": "https://www.nature.com/nrd/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Compute enables longer and larger simulations but molecular dynamics accuracy is fundamentally limited"
+      }
+    },
+    {
+      "id": "compute_to_materials",
+      "from_domain": "compute",
+      "from_index": 1,
+      "to_domain": "materials",
+      "to_index": 9,
+      "weight": 1.5,
+      "v5_weight": 1.5,
+      "weight_justification": "Unchanged. DFT (Density Functional Theory) calculations scale directly with available compute. More compute enables larger unit cells, more complex alloy systems, and higher-throughput screening.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "DFT computational throughput scales linearly with available compute; enables high-throughput materials screening",
+          "measured_amplification": "Materials Project: 150,000+ computed materials properties enabled by HPC scaling",
+          "source": "Materials Project (Berkeley Lab); Jain et al., APL Materials 2013",
+          "source_url": "https://materialsproject.org/",
+          "caveat": "DFT accuracy limited for strongly correlated systems; not all computed properties match experiment"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "DFT has known systematic errors for certain material classes (transition metal oxides, f-electron systems)",
+          "source": "Various computational materials science reviews",
+          "source_url": "https://www.nature.com/natrevmats/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "More compute enables more screening but DFT accuracy limits are fundamental"
+      }
+    },
+    {
+      "id": "materials_to_energy",
+      "from_domain": "materials",
+      "from_index": 9,
+      "to_domain": "energy",
+      "to_index": 2,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. Perovskite solar cells are the strongest example \u2014 materials science directly enabling next-generation solar technology. Silicon-perovskite tandems reached >33% efficiency (2024), compared to ~26% silicon limit.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Perovskite-silicon tandem solar cells achieving >33% efficiency, surpassing single-junction silicon limit",
+          "measured_amplification": "33.7% efficiency (LONGi, 2024) vs ~26.8% silicon limit \u2014 25% relative improvement",
+          "source": "LONGi record, NREL Best Research-Cell Efficiency Chart, 2024",
+          "source_url": "https://www.nrel.gov/pv/cell-efficiency.html",
+          "caveat": "Perovskite stability and durability remain challenges for commercial deployment. Lab efficiency =/= field efficiency."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Perovskite solar cells still face significant durability challenges \u2014 degradation under moisture and heat",
+          "source": "Various reviews in Nature Energy, 2024",
+          "source_url": "https://www.nature.com/nenergy/"
+        }
+      ],
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 2.5,
+        "notes": "Efficiency approaching thermodynamic limits (Shockley-Queisser for tandems ~45%)"
+      }
+    },
+    {
+      "id": "materials_to_batteries",
+      "from_domain": "materials",
+      "from_index": 9,
+      "to_domain": "batteries",
+      "to_index": 3,
+      "weight": 2.5,
+      "v5_weight": 2.5,
+      "weight_justification": "Unchanged. LFP (lithium iron phosphate) revolution is the canonical example. Materials innovation (CATL's cell-to-pack, sodium-ion) is the primary driver of battery cost reduction alongside manufacturing scale.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "LFP battery revolution: materials innovation drove dramatic cost decline and improved safety",
+          "measured_amplification": "LFP enabled ~30% cost reduction vs NMC for energy storage applications; eliminated cobalt dependency",
+          "source": "BloombergNEF, CATL financial reports, 2024",
+          "source_url": "https://about.bnef.com/",
+          "caveat": "LFP has lower energy density than NMC \u2014 tradeoff between cost and performance"
+        },
+        {
+          "description": "Sodium-ion batteries: materials innovation enabling cobalt-free, lithium-free batteries",
+          "measured_amplification": "Sodium-ion reaching $40-60/kWh at cell level, ~50% cheaper than current Li-ion",
+          "source": "CATL sodium-ion announcements; various Nature Energy publications",
+          "source_url": "https://www.catl.com/",
+          "caveat": "Lower energy density, still early-stage manufacturing scale"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most battery cost reduction comes from manufacturing scale (Wright's Law), not new materials",
+          "source": "Ziegler & Trancik, 'Re-examining rates of lithium-ion battery technology improvement', Energy & Environmental Science 2021",
+          "source_url": "https://pubs.rsc.org/en/content/articlelanding/2021/ee/d0ee02681f"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "New chemistries enable step-function improvements but each new chemistry has diminishing marginal gain"
+      }
+    },
+    {
+      "id": "robotics_to_manufacturing",
+      "from_domain": "robotics",
+      "from_index": 6,
+      "to_domain": "manufacturing",
+      "to_index": 8,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. Robots ARE manufacturing. Foxconn deployed 100,000+ robots; Tesla is building 'lights-out' factories. This is the most direct causal link in the interaction matrix.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Foxconn deployed 100,000+ robots (Foxbots), reducing headcount by 60,000 at single factory",
+          "measured_amplification": "~40% labor cost reduction in affected production lines",
+          "source": "Foxconn financial reports and press releases, 2023-2024",
+          "source_url": "https://www.foxconn.com/",
+          "caveat": "Final assembly of electronics still requires significant human labor for fine manipulation"
+        },
+        {
+          "description": "Tesla Gigafactory: among the most automated factories on Earth, using 1,000+ robots",
+          "measured_amplification": "Production rate of ~10,000+ vehicles/week with relatively small workforce",
+          "source": "Tesla quarterly production reports; Munro & Associates teardown analyses",
+          "source_url": "https://www.tesla.com/",
+          "caveat": "Tesla initially over-automated (2018 Model 3 production hell), suggesting limits to automation"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Tesla's 'production hell' (2018) demonstrated that over-automation can slow production \u2014 humans remain essential for flexible tasks",
+          "source": "Elon Musk acknowledgment: 'Excessive automation at Tesla was a mistake', 2018",
+          "source_url": "https://twitter.com/elonmusk/status/984882630947753984"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Diminishing returns as the easy-to-automate tasks are automated first"
+      }
+    },
+    {
+      "id": "quantum_to_materials",
+      "from_domain": "quantum",
+      "from_index": 11,
+      "to_domain": "materials",
+      "to_index": 9,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. Quantum molecular simulation is the 'killer app' for quantum computing. Google Willow (2024) demonstrated quantum advantage for certain chemistry problems. Still mostly theoretical advantage \u2014 practical impact years away.",
+      "activation_threshold": 50,
+      "evidence": [
+        {
+          "description": "Google Willow demonstrated quantum computation that would take classical computers 10 septillion years",
+          "measured_amplification": "Theoretical: exponential speedup for certain molecular simulation problems",
+          "source": "Google Quantum AI, Willow paper, Nature 2024",
+          "source_url": "https://blog.google/technology/research/google-willow-quantum-chip/",
+          "caveat": "Demonstrated on artificial benchmark problem, not a real materials science problem. Practical quantum advantage for materials likely 5-10+ years away."
+        },
+        {
+          "description": "Quantum simulation of small molecules (H2, LiH) demonstrated on near-term hardware",
+          "measured_amplification": "Exact ground-state energies for small molecules (2-20 electrons)",
+          "source": "Google, IBM, various academic groups",
+          "source_url": "https://www.nature.com/articles/s41586-019-1666-5",
+          "caveat": "Only for very small molecules. Classically solvable molecules. Not yet beyond classical capability for useful problems."
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Practical quantum advantage for materials science requires error-corrected quantum computers with millions of qubits \u2014 decades away on current trajectories",
+          "source": "Babbush et al., 'Quantum simulation of chemistry with sublinear scaling', 2023",
+          "source_url": "https://arxiv.org/abs/2312.09529"
+        }
+      ],
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 3.5,
+        "notes": "If/when error-corrected quantum computers arrive, impact on materials science would be transformative. Current impact near zero."
+      }
+    },
+    {
+      "id": "genomics_to_drug",
+      "from_domain": "genomics",
+      "from_index": 4,
+      "to_domain": "drug",
+      "to_index": 5,
+      "weight": 2.0,
+      "v5_weight": 2.0,
+      "weight_justification": "Unchanged. GWAS (genome-wide association studies) have identified thousands of drug targets. Genomics-to-drug-target pipeline is well-established and well-documented. Multiple successful examples (PCSK9, BRCA-targeted therapies).",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "GWAS have identified 10,000+ disease-associated loci, enabling target-based drug discovery",
+          "measured_amplification": "Drugs with genetic evidence of target-disease link have 2x higher clinical trial success rate",
+          "source": "Nelson et al., 'The support of human genetic evidence for approved drug indications', Nature Genetics 2015; King et al., Drug Discovery Today 2019",
+          "source_url": "https://www.nature.com/articles/ng.3314",
+          "caveat": "Most GWAS loci explain small fractions of disease risk; many are not actionable drug targets"
+        },
+        {
+          "description": "PCSK9: genetic discovery led directly to a new drug class (evolocumab/alirocumab) for cholesterol",
+          "measured_amplification": "Gene discovery (2003) to FDA approval (2015): 12 years. Now a $2B+ drug class.",
+          "source": "Abifadel et al., Nature Genetics 2003; FDA approval records",
+          "source_url": "https://www.nature.com/articles/ng1161",
+          "caveat": "Timeline of 12 years from genetic discovery to drug is still long"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most genetically validated targets still fail in clinical trials due to off-target effects, toxicity, and bioavailability",
+          "source": "Cook et al., 'Lessons learned from the fate of AstraZeneca's drug pipeline', Nature Reviews Drug Discovery 2014",
+          "source_url": "https://www.nature.com/articles/nrd4309"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Genetic targets are necessary but not sufficient for successful drugs"
+      }
+    },
+    {
+      "id": "energy_to_compute",
+      "from_domain": "energy",
+      "from_index": 2,
+      "to_domain": "compute",
+      "to_index": 1,
+      "weight": 1.0,
+      "v5_weight": 1.0,
+      "weight_justification": "Unchanged. Cheap energy makes large data centres economically viable. Energy is ~30-40% of data centre operating cost. Effect is real but modest \u2014 compute cost is dominated by semiconductor manufacturing, not energy.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Energy accounts for 30-40% of data centre operating costs; cheaper energy directly reduces compute cost",
+          "measured_amplification": "Each 50% reduction in energy cost yields ~15-20% reduction in total compute cost",
+          "source": "Uptime Institute, Data Centre Cost Analysis 2024; Lawrence Berkeley National Lab",
+          "source_url": "https://uptimeinstitute.com/",
+          "caveat": "Data centre siting already optimizes for cheap energy (Oregon, Iceland, Nordic countries)"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "AI compute demand is growing faster than energy cost decline, creating net energy pressure",
+          "source": "IEA, 'Electricity 2024'",
+          "source_url": "https://www.iea.org/reports/electricity-2024"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Energy is a declining fraction of compute cost as chip efficiency improves"
+      }
+    },
+    {
+      "id": "ai_to_environment",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "environment",
+      "to_index": 12,
+      "weight": 1.8,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. AI is demonstrably useful for grid optimization (5-15% efficiency gains), materials discovery for carbon capture (Microsoft/PNNL paradigm), and climate modeling. Multiple independent evidence sources. Weight of 1.8 reflects genuine utility across environmental applications without overstating impact given that environmental costs are dominated by physical infrastructure and energy input costs.",
+      "activation_threshold": 30,
+      "evidence": [
+        {
+          "description": "AI-driven grid optimization reducing transmission losses and enabling higher renewable penetration",
+          "measured_amplification": "5-15% reduction in grid losses; improved renewable integration",
+          "source": "NREL, 'AI for Grid Modernization', 2023; Google DeepMind grid optimization deployments",
+          "source_url": "https://www.nrel.gov/grid/artificial-intelligence.html",
+          "caveat": "Grid is a regulated, slow-moving infrastructure. AI adoption constrained by utility timelines."
+        },
+        {
+          "description": "AI-accelerated discovery of carbon capture sorbents and catalysts",
+          "measured_amplification": "10-50x screening speedup for candidate materials",
+          "source": "Multiple DOE-funded projects; analogous to Microsoft/PNNL battery work",
+          "source_url": "https://www.energy.gov/fecm/carbon-capture",
+          "caveat": "Discovery acceleration does not directly reduce carbon capture cost \u2014 energy input is the primary cost."
+        },
+        {
+          "description": "AI climate modeling: improved weather prediction (GraphCast) and climate projection accuracy",
+          "measured_amplification": "10-day weather forecasts competitive with physics-based models at 1000x lower compute cost",
+          "source": "Lam et al., 'Learning skillful medium-range global weather forecasting', Science 2023",
+          "source_url": "https://www.science.org/doi/10.1126/science.adi2336",
+          "caveat": "Weather forecasting is not the same as climate intervention"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "AI's own energy footprint may partially offset environmental benefits",
+          "source": "Strubell et al., 'Energy and Policy Considerations for NLP', ACL 2019; updated estimates 2024",
+          "source_url": "https://arxiv.org/abs/1906.02243"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Environmental technology costs dominated by energy and infrastructure, not optimization"
+      }
+    },
+    {
+      "id": "ai_to_vr",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "vr",
+      "to_index": 13,
+      "weight": 2.0,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. AI is transforming VR/AR through neural radiance fields (NeRF), AI upscaling (DLSS, FSR), procedural content generation, and real-time environment creation. NVIDIA DLSS alone provides 2-4x frame rate improvement with comparable visual quality. AI avatar generation and real-time translation are enabling new VR applications. Weight of 2.0 reflects AI as a major driver of VR quality-per-dollar improvement.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "NVIDIA DLSS (Deep Learning Super Sampling): AI upscaling providing 2-4x frame rate improvement",
+          "measured_amplification": "2-4x frame rate at comparable visual quality; enables higher resolutions on existing hardware",
+          "source": "NVIDIA DLSS benchmarks, Digital Foundry analyses, 2023-2024",
+          "source_url": "https://www.nvidia.com/en-us/geforce/technologies/dlss/",
+          "caveat": "Hardware-specific (NVIDIA only for DLSS; AMD FSR is an alternative with lower quality)"
+        },
+        {
+          "description": "Neural Radiance Fields (NeRF) and Gaussian Splatting enabling photorealistic 3D scene reconstruction from photos",
+          "measured_amplification": "Minutes to reconstruct photorealistic 3D scenes from 2D photos, vs hours/days for manual modeling",
+          "source": "Mildenhall et al., 'NeRF: Neural Radiance Fields', ECCV 2020; Kerbl et al., '3D Gaussian Splatting', SIGGRAPH 2023",
+          "source_url": "https://arxiv.org/abs/2003.08934",
+          "caveat": "Static scenes easier than dynamic; real-time rendering of NeRFs still limited"
+        },
+        {
+          "description": "AI procedural content generation for games and VR worlds",
+          "measured_amplification": "10-100x reduction in content creation time for certain asset types",
+          "source": "Various game studio reports; NVIDIA Omniverse",
+          "source_url": "https://www.nvidia.com/en-us/omniverse/",
+          "caveat": "Quality varies; human art direction still essential"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "VR headset adoption remains sluggish despite AI improvements \u2014 comfort, content, and social factors dominate",
+          "source": "IDC VR/AR headset tracking data, 2024",
+          "source_url": "https://www.idc.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "AI rendering improvements are substantial but VR adoption limited by hardware form factor and content ecosystem"
+      }
+    },
+    {
+      "id": "ai_to_sensors",
+      "from_domain": "ai",
+      "from_index": 0,
+      "to_domain": "sensors",
+      "to_index": 14,
+      "weight": 2.2,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. AI sensor fusion is arguably the most impactful AI application in consumer technology. Every modern smartphone uses AI for image processing (computational photography). Autonomous vehicles rely entirely on AI sensor fusion. Edge AI inference enables on-device processing that dramatically increases effective sensor capability. Weight of 2.2 reflects the deep integration of AI into sensor value chains.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Computational photography: AI-driven image processing in smartphones providing DSLR-quality from tiny sensors",
+          "measured_amplification": "10-100x effective improvement in image quality from same hardware sensor",
+          "source": "Google Pixel computational photography papers; Apple Camera pipeline documentation",
+          "source_url": "https://ai.googleblog.com/2018/11/night-sight-seeing-in-dark-on-pixel.html",
+          "caveat": "AI is processing, not sensing \u2014 fundamental sensor physics still limit raw data quality"
+        },
+        {
+          "description": "Autonomous vehicle sensor fusion: combining lidar, radar, cameras via AI for superhuman perception",
+          "measured_amplification": "Waymo: AI sensor fusion achieving lower accident rate than human drivers per million miles",
+          "source": "Waymo Safety Report 2024; NHTSA data",
+          "source_url": "https://waymo.com/safety/",
+          "caveat": "Limited operational domains (geofenced cities). Edge cases remain challenging."
+        },
+        {
+          "description": "Edge AI chips (Qualcomm, Apple Neural Engine) enabling on-device ML inference for sensors",
+          "measured_amplification": "100x improvement in edge AI inference TOPS/watt over 5 years",
+          "source": "Qualcomm, Apple chip announcements; MLPerf edge benchmarks",
+          "source_url": "https://mlcommons.org/en/inference-edge-31/",
+          "caveat": "Edge AI improves the processing, not the physical sensor itself"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Physical sensor improvements (pixel size, sensitivity) follow semiconductor scaling, not AI scaling",
+          "source": "Sony semiconductor sensor roadmaps",
+          "source_url": "https://www.sony-semicon.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "AI dramatically improves what can be extracted from sensor data but physical sensing limits remain"
+      }
+    },
+    {
+      "id": "energy_to_environment",
+      "from_domain": "energy",
+      "from_index": 2,
+      "to_domain": "environment",
+      "to_index": 12,
+      "weight": 2.5,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. This is one of the highest-weight new interactions because the relationship is direct and well-documented. Desalination cost is dominated by energy input (~50% of total cost). Carbon capture cost is dominated by energy input (~70% of total cost). Cheap energy directly and measurably reduces environmental remediation costs. Every halving of energy cost roughly halves desalination cost. Weight of 2.5 reflects the direct, causal, quantified relationship.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Desalination energy cost: ~3-4 kWh/m3 for reverse osmosis. Energy is ~50% of operating cost.",
+          "measured_amplification": "Each 50% reduction in energy cost yields ~25% reduction in desalination cost",
+          "source": "International Desalination Association; Elimelech & Phillip, Science 2011",
+          "source_url": "https://www.science.org/doi/10.1126/science.1200488",
+          "caveat": "Membrane replacement and capital costs also significant"
+        },
+        {
+          "description": "Direct Air Capture (DAC) of CO2: energy is 60-70% of operating cost for both solid sorbent and liquid solvent approaches",
+          "measured_amplification": "Each 50% reduction in energy cost yields ~30-35% reduction in DAC cost",
+          "source": "National Academies, 'Negative Emissions Technologies and Reliable Sequestration', 2019; Climeworks, Carbon Engineering documentation",
+          "source_url": "https://www.nationalacademies.org/our-work/negative-emissions-technologies-and-reliable-sequestration-a-research-agenda",
+          "caveat": "Energy cost is necessary but not sufficient \u2014 sorbent degradation and capital costs also matter"
+        },
+        {
+          "description": "Green hydrogen production: electrolysis cost directly proportional to electricity cost",
+          "measured_amplification": "At $10/MWh electricity (achievable with cheap solar), green hydrogen reaches ~$1/kg \u2014 competitive with fossil",
+          "source": "IRENA, 'Green Hydrogen Cost Reduction', 2020; BloombergNEF Hydrogen Economy Outlook",
+          "source_url": "https://www.irena.org/publications/2020/Dec/Green-hydrogen-cost-reduction",
+          "caveat": "Electrolyzer capital costs and capacity factors also matter"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Cheap energy could increase total energy consumption (Jevons Paradox), partially offsetting environmental benefits",
+          "source": "Various energy economics literature; Sorrell, 'Jevons' Paradox revisited', Energy Policy 2009",
+          "source_url": "https://www.sciencedirect.com/science/article/pii/S0301421508007428"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0,
+        "notes": "Direct causal link but subject to diminishing returns as energy becomes a smaller fraction of total cost"
+      }
+    },
+    {
+      "id": "robotics_to_space",
+      "from_domain": "robotics",
+      "from_index": 6,
+      "to_domain": "space",
+      "to_index": 7,
+      "weight": 1.5,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Autonomous operations are critical for space because human presence is extremely expensive. Every Mars mission relies entirely on robotic operations. On-orbit servicing (Northrop Grumman MEV) and autonomous satellite operations reduce costs. Weight of 1.5 reflects the real but bounded impact \u2014 space costs are dominated by propulsion physics, not on-orbit operations.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "Mars rovers (Perseverance, Curiosity) demonstrate autonomous navigation and sample collection",
+          "measured_amplification": "Enables science operations with 4-24 minute communication delay; no alternative to autonomy",
+          "source": "NASA JPL Mars rover documentation",
+          "source_url": "https://mars.nasa.gov/mars2020/",
+          "caveat": "Mars rovers are very slow and cautious \u2014 limited autonomy compared to terrestrial robots"
+        },
+        {
+          "description": "Northrop Grumman MEV: robotic satellite servicing extending satellite life by 5+ years",
+          "measured_amplification": "$200M-500M value per satellite life extension",
+          "source": "Northrop Grumman Space Logistics documentation",
+          "source_url": "https://www.northropgrumman.com/space/space-logistics-services/",
+          "caveat": "Narrow application \u2014 geostationary satellite docking only"
+        },
+        {
+          "description": "SpaceX autonomous rocket landing \u2014 robotics enabling reusability",
+          "measured_amplification": "10-100x launch cost reduction enabled by autonomous precision landing",
+          "source": "SpaceX landing documentation; various analyses of Falcon 9 economics",
+          "source_url": "https://www.spacex.com/vehicles/falcon-9/",
+          "caveat": "Autonomous landing is more guidance/control than robotics per se"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Space cost reduction driven primarily by propulsion engineering and manufacturing scale, not autonomy",
+          "source": "NASA OIG cost analyses of commercial launch providers",
+          "source_url": "https://oig.nasa.gov/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Autonomy is enabling but propulsion physics dominates space cost"
+      }
+    },
+    {
+      "id": "compute_to_genomics",
+      "from_domain": "compute",
+      "from_index": 1,
+      "to_domain": "genomics",
+      "to_index": 4,
+      "weight": 1.8,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Bioinformatics is fundamentally compute-limited. Genome assembly, variant calling, and multi-omic analysis scale directly with available compute. The drop in sequencing cost has been accompanied by (and partly enabled by) massive compute scaling. UK Biobank (500K genomes) and All of Us (1M+) are only possible because of cloud compute scaling. Weight of 1.8 reflects the strong, documented, direct relationship.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Genome assembly and variant calling compute requirements scale with sequencing throughput",
+          "measured_amplification": "BWA/GATK pipeline: ~100 CPU-hours per 30x whole genome. Cloud compute made this affordable at scale.",
+          "source": "Broad Institute GATK documentation; Google Genomics / DeepVariant",
+          "source_url": "https://gatk.broadinstitute.org/",
+          "caveat": "Compute cost is now a small fraction of total sequencing cost (dominated by reagents and instruments)"
+        },
+        {
+          "description": "UK Biobank: 500,000 whole genomes analyzed using massive cloud compute",
+          "measured_amplification": "Enabled population-scale genomics that was computationally impossible 10 years prior",
+          "source": "UK Biobank, Nature 2022; Halldorsson et al.",
+          "source_url": "https://www.ukbiobank.ac.uk/",
+          "caveat": "Data analysis is not the bottleneck for most genomics applications \u2014 interpretation is"
+        },
+        {
+          "description": "DeepVariant: GPU-accelerated variant calling achieving higher accuracy than traditional methods",
+          "measured_amplification": "5-10x speedup with improved accuracy",
+          "source": "Poplin et al., Nature Biotechnology 2018; Google Health",
+          "source_url": "https://github.com/google/deepvariant",
+          "caveat": "Accuracy improvements incremental for common variants"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Sequencing cost decline driven primarily by chemistry innovations (Illumina SBS, nanopore), not compute",
+          "source": "NHGRI Genome Sequencing Costs data",
+          "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Compute enabling but sequencing chemistry and clinical interpretation are the tighter bottlenecks"
+      }
+    },
+    {
+      "id": "energy_to_manufacturing",
+      "from_domain": "energy",
+      "from_index": 2,
+      "to_domain": "manufacturing",
+      "to_index": 8,
+      "weight": 1.2,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Energy is a significant but not dominant cost in most manufacturing (typically 5-15% of total cost, but much higher for energy-intensive industries like aluminum smelting, steel, cement). Cheap energy enables reshoring of energy-intensive manufacturing. Weight of 1.2 reflects the real but moderate impact for average manufacturing.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Aluminum smelting: energy is 30-40% of production cost. Cheap energy directly reduces aluminum cost.",
+          "measured_amplification": "Each 50% energy cost reduction yields ~15-20% aluminum cost reduction",
+          "source": "International Aluminium Institute; CRU Group analysis",
+          "source_url": "https://international-aluminium.org/",
+          "caveat": "Only applies to energy-intensive industries, not all manufacturing"
+        },
+        {
+          "description": "Electric arc furnace steel: energy is 20-30% of production cost",
+          "measured_amplification": "Cheap renewable energy enables competitive green steel production",
+          "source": "World Steel Association; various green steel announcements (SSAB, H2 Green Steel)",
+          "source_url": "https://worldsteel.org/",
+          "caveat": "Capital costs and raw materials also significant"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "For most consumer goods manufacturing, energy is 5-10% of cost \u2014 labor and materials dominate",
+          "source": "US Census Bureau, Annual Survey of Manufactures",
+          "source_url": "https://www.census.gov/programs-surveys/asm.html"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Impact varies enormously by industry \u2014 high for smelting/cement, low for electronics assembly"
+      }
+    },
+    {
+      "id": "sensors_to_robotics",
+      "from_domain": "sensors",
+      "from_index": 14,
+      "to_domain": "robotics",
+      "to_index": 6,
+      "weight": 1.8,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Cheap, accurate sensors are a critical enabler for robotics. Lidar cost dropped from $75,000 (Velodyne 2012) to $500 (Livox 2024). MEMS IMUs dropped from $100 to $1. Force-torque sensors enabling dexterous manipulation. Without cheap sensors, affordable robots are impossible. Weight of 1.8 reflects sensors as a necessary (though not sufficient) enabler.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Lidar cost collapse: $75,000 (2012) to $500 (2024) enabled by automotive demand and MEMS/solid-state designs",
+          "measured_amplification": "150x cost reduction enabling lidar on consumer vehicles and robots",
+          "source": "Velodyne/Ouster/Livox pricing; Yole D\u00e9veloppement lidar market reports",
+          "source_url": "https://www.yolegroup.com/",
+          "caveat": "Cheap lidar still less capable than expensive units; range and resolution tradeoffs"
+        },
+        {
+          "description": "MEMS IMU cost decline from $100+ to $1 enabling inertial navigation in every robot and drone",
+          "measured_amplification": "100x cost reduction; now a commodity component",
+          "source": "InvenSense/TDK, Bosch Sensortec product pricing",
+          "source_url": "https://invensense.tdk.com/",
+          "caveat": "MEMS IMU accuracy still far below fiber-optic gyroscopes for precision applications"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Robot cost is dominated by actuators and control systems, not sensors (sensors are <10% of typical robot BOM)",
+          "source": "Various robot teardown analyses",
+          "source_url": "https://ifr.org/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Sensors are an enabling but minority cost factor in robotics"
+      }
+    },
+    {
+      "id": "compute_to_vr",
+      "from_domain": "compute",
+      "from_index": 1,
+      "to_domain": "vr",
+      "to_index": 13,
+      "weight": 2.2,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. VR resolution and frame rate are directly limited by GPU/SoC compute capability. VR requires ~7x more pixels per second than flat displays due to dual rendering, high refresh rate, and wide FOV. The Qualcomm XR2 Gen 2 chip specifically targets VR compute requirements. Weight of 2.2 reflects compute as the primary bottleneck for VR visual quality.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "VR rendering requires ~7x more compute than flat screen gaming due to stereo rendering, high refresh rate, low latency",
+          "measured_amplification": "Each GPU generation (~50% perf increase) enables meaningful VR resolution/quality jump",
+          "source": "NVIDIA, Qualcomm XR documentation; Abrash (Meta) predictions on VR compute requirements",
+          "source_url": "https://developer.qualcomm.com/hardware/xr-vr-mr",
+          "caveat": "Mobile VR (Quest) is SoC-limited; tethered VR benefits from desktop GPU scaling"
+        },
+        {
+          "description": "Quest 3: Qualcomm XR2 Gen 2 enabled significant resolution and passthrough quality improvement over Quest 2",
+          "measured_amplification": "~2x GPU performance enabling higher resolution and better mixed reality passthrough",
+          "source": "Meta Quest 3 specifications; Qualcomm XR2 Gen 2 benchmarks",
+          "source_url": "https://www.meta.com/quest/quest-3/",
+          "caveat": "Form factor, weight, and battery life also constrain VR adoption"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "VR adoption limited by content, comfort, and social factors more than raw compute",
+          "source": "IDC VR/AR market data; Meta Reality Labs financial losses ($16B+ in 2023)",
+          "source_url": "https://www.idc.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Compute is a necessary but not sufficient condition for VR quality; human visual system sets an upper bound (~60 PPD retinal resolution)"
+      }
+    },
+    {
+      "id": "batteries_to_robotics",
+      "from_domain": "batteries",
+      "from_index": 3,
+      "to_domain": "robotics",
+      "to_index": 6,
+      "weight": 1.5,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Battery energy density and cost directly constrain mobile robot operational time and cost. Humanoid robots require ~1-5 kWh batteries. At $108/kWh (2025), battery is ~$100-500 per robot. At $30/kWh, battery cost becomes negligible and energy density improvements extend operation time. Figure, Tesla Optimus, and Unitree all cite battery as a key design constraint.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Humanoid robot operating time directly limited by battery energy density (~250-300 Wh/kg current Li-ion)",
+          "measured_amplification": "Each 50% improvement in energy density extends robot operating time by ~50%",
+          "source": "Boston Dynamics, Tesla Optimus, Figure AI specifications and presentations",
+          "source_url": "https://www.figure.ai/",
+          "caveat": "Battery is one of many cost/performance factors in robots (actuators, compute are also significant)"
+        },
+        {
+          "description": "Drone flight time directly limited by battery: DJI Mavic series improved from 20 to 45 minutes across generations, driven by battery improvements",
+          "measured_amplification": "~2x flight time improvement over 5 years",
+          "source": "DJI product specifications across generations",
+          "source_url": "https://www.dji.com/",
+          "caveat": "Applies mainly to mobile/untethered robots"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Many industrial robots are tethered (grid-powered), making battery cost irrelevant",
+          "source": "IFR World Robotics Report \u2014 majority of installed robots are fixed industrial arms",
+          "source_url": "https://ifr.org/worldrobotics/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Impact strongest for mobile/humanoid robots; irrelevant for fixed industrial robots"
+      }
+    },
+    {
+      "id": "materials_to_sensors",
+      "from_domain": "materials",
+      "from_index": 9,
+      "to_domain": "sensors",
+      "to_index": 14,
+      "weight": 1.5,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Sensor performance is fundamentally materials-limited. Infrared sensors (HgCdTe to type-II superlattices), MEMS (silicon micromachining advances), quantum dot photodetectors, and perovskite-based sensors all demonstrate materials driving sensor capability. Weight of 1.5 reflects the documented but incremental impact.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "Quantum dot photodetectors enabling new spectral ranges and sensitivity improvements",
+          "measured_amplification": "10-100x improvement in specific spectral bands (SWIR) compared to traditional InGaAs",
+          "source": "Various publications in Nature Photonics; SWIR Vision Systems commercialization",
+          "source_url": "https://www.nature.com/nphoton/",
+          "caveat": "Niche applications; mainstream visible-light sensors still silicon-dominated"
+        },
+        {
+          "description": "MEMS fabrication advances enabling smaller, cheaper, more sensitive inertial and pressure sensors",
+          "measured_amplification": "10x sensitivity improvement per decade; 100x cost reduction over 15 years",
+          "source": "Bosch Sensortec, STMicroelectronics MEMS product evolution",
+          "source_url": "https://www.bosch-sensortec.com/",
+          "caveat": "Improvements are incremental, following a steady learning curve"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Silicon CMOS image sensors have dominated for 20+ years; materials innovations have not displaced them",
+          "source": "Sony semiconductor market leadership data",
+          "source_url": "https://www.sony-semicon.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Materials enable new sensor modalities but silicon dominance is strong for mainstream applications"
+      }
+    },
+    {
+      "id": "vr_to_bci",
+      "from_domain": "vr",
+      "from_index": 13,
+      "to_domain": "bci",
+      "to_index": 10,
+      "weight": 1.0,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. VR provides a controlled stimulus environment for BCI calibration and training. VR-based rehabilitation with BCI feedback is a growing clinical application. The interaction is real but indirect \u2014 VR provides the interface, not the neural technology. Weight of 1.0 reflects this supporting role.",
+      "activation_threshold": 30,
+      "evidence": [
+        {
+          "description": "VR-based BCI rehabilitation: VR environments provide controlled stimuli for motor imagery BCI training",
+          "measured_amplification": "2-3x improvement in BCI training speed when combined with VR feedback",
+          "source": "Various clinical studies; Bockbrader et al., PM&R 2013",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+          "caveat": "Small-scale clinical studies; not yet standard practice"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "BCI performance is dominated by electrode and decoding technology, not the interface environment",
+          "source": "BrainGate consortium publications",
+          "source_url": "https://www.braingate.org/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Supporting role only \u2014 VR is a user interface, not a neural technology"
+      }
+    },
+    {
+      "id": "genomics_to_environment",
+      "from_domain": "genomics",
+      "from_index": 4,
+      "to_domain": "environment",
+      "to_index": 12,
+      "weight": 1.2,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Synthetic biology and engineered organisms for environmental remediation is a growing field. Engineered algae for carbon fixation, modified soil microbiomes for nitrogen fixation, and bioremediation organisms are documented applications. Still mostly research-stage. Weight of 1.2 reflects early-stage but genuine potential.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "Engineered algae for enhanced carbon fixation: 2-5x improvement in CO2 uptake over wild-type",
+          "measured_amplification": "2-5x carbon fixation rate improvement in laboratory settings",
+          "source": "Various synthetic biology publications; Liang & Lindblad, Energy & Environmental Science",
+          "source_url": "https://pubs.rsc.org/en/journals/journalissues/ee",
+          "caveat": "Lab results; outdoor scaling faces contamination, predation, and environmental regulation challenges"
+        },
+        {
+          "description": "Metagenomic monitoring: genomic sequencing of environmental samples for biodiversity and pollution monitoring",
+          "measured_amplification": "Identifies 10-100x more species/pathogens than traditional methods",
+          "source": "Earth BioGenome Project; eDNA monitoring studies",
+          "source_url": "https://www.earthbiogenome.org/",
+          "caveat": "Monitoring is not remediation"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Release of genetically modified organisms faces extreme regulatory barriers in most jurisdictions",
+          "source": "Cartagena Protocol on Biosafety; EU GMO regulations",
+          "source_url": "https://bch.cbd.int/protocol"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0,
+        "notes": "Regulatory constraints are the binding limit, not technical capability"
+      }
+    },
+    {
+      "id": "batteries_to_energy",
+      "from_domain": "batteries",
+      "from_index": 3,
+      "to_domain": "energy",
+      "to_index": 2,
+      "weight": 2.0,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Cheap batteries enable solar/wind to provide dispatchable power, solving intermittency. This is arguably the most important energy transition interaction: without storage, renewables cannot fully replace fossil fuels. Battery storage LCOE has dropped from $500/MWh (2015) to $60/MWh (2025). At $20/MWh, solar+storage undercuts all fossil generation. Weight of 2.0 reflects this critical enabling role.",
+      "activation_threshold": 5,
+      "evidence": [
+        {
+          "description": "Battery storage enabling solar/wind to provide dispatchable (24/7) power",
+          "measured_amplification": "Solar+storage now cheaper than new gas peakers in many markets",
+          "source": "Lazard LCOE Analysis 2024; BloombergNEF",
+          "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/",
+          "caveat": "Long-duration storage (seasonal) still much more expensive than short-duration (4-hour)"
+        },
+        {
+          "description": "Grid-scale battery deployments growing exponentially: 30+ GWh installed in 2024 (US alone)",
+          "measured_amplification": "Enabling higher renewable penetration without grid instability",
+          "source": "EIA, 'Battery Storage in the United States', 2024",
+          "source_url": "https://www.eia.gov/analysis/studies/electricity/batterystorage/",
+          "caveat": "Current installations cover hours, not days or weeks of storage"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Seasonal storage (weeks-months) remains unsolved and batteries are not the answer for it \u2014 hydrogen or other approaches needed",
+          "source": "Sepulveda et al., 'The role of firm low-carbon electricity resources in deep decarbonization', Joule 2018",
+          "source_url": "https://www.cell.com/joule/fulltext/S2542-4351(18)30386-6"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5,
+        "notes": "Short-duration storage is being solved; long-duration storage is a different problem"
+      }
+    },
+    {
+      "id": "space_to_sensors",
+      "from_domain": "space",
+      "from_index": 7,
+      "to_domain": "sensors",
+      "to_index": 14,
+      "weight": 1.2,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Cheap launch enables massive satellite constellations for Earth observation. Planet Labs operates 200+ imaging satellites. Starlink demonstrates mass satellite manufacturing. Cheap launch directly enables more sensors in orbit. Weight of 1.2 reflects a real but bounded effect \u2014 most sensor value is terrestrial.",
+      "activation_threshold": 20,
+      "evidence": [
+        {
+          "description": "Planet Labs: 200+ Earth observation satellites enabled by cheap small-satellite launch",
+          "measured_amplification": "Daily imaging of entire Earth's landmass \u2014 impossible without cheap launch",
+          "source": "Planet Labs SEC filings and mission documentation",
+          "source_url": "https://www.planet.com/",
+          "caveat": "Resolution still limited compared to aerial/ground sensors for most applications"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Most sensor applications are terrestrial \u2014 orbital sensors are a niche market",
+          "source": "Various sensor market reports",
+          "source_url": "https://www.marketsandmarkets.com/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Impact limited to Earth observation and communications \u2014 niche relative to total sensor market"
+      }
+    },
+    {
+      "id": "sensors_to_environment",
+      "from_domain": "sensors",
+      "from_index": 14,
+      "to_domain": "environment",
+      "to_index": 12,
+      "weight": 1.0,
+      "v5_weight": null,
+      "weight_justification": "NEW in v6. Cheap environmental sensors enable monitoring that drives policy and intervention. Air quality monitoring networks, ocean pH sensors, methane leak detection (MethaneSAT) all depend on cheap, ubiquitous sensors. Monitoring is necessary for environmental management but does not directly reduce remediation costs. Weight of 1.0 reflects the enabling but indirect role.",
+      "activation_threshold": 10,
+      "evidence": [
+        {
+          "description": "MethaneSAT: satellite-based methane monitoring enabling targeted leak detection and reduction",
+          "measured_amplification": "Identifies super-emitters responsible for majority of methane leaks",
+          "source": "Environmental Defense Fund, MethaneSAT documentation",
+          "source_url": "https://www.methanesat.org/",
+          "caveat": "Monitoring identifies problems but does not solve them directly"
+        },
+        {
+          "description": "Low-cost air quality sensor networks (PurpleAir, etc.) democratizing environmental monitoring",
+          "measured_amplification": "100x more monitoring points than government networks at 1/1000th the cost per point",
+          "source": "PurpleAir network data; various citizen science publications",
+          "source_url": "https://www.purpleair.com/",
+          "caveat": "Accuracy lower than reference-grade monitors; monitoring =/= remediation"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "description": "Decades of excellent climate monitoring data have not prevented emissions growth \u2014 information does not automatically drive action",
+          "source": "IPCC AR6, 'Climate Change 2023: Synthesis Report'",
+          "source_url": "https://www.ipcc.ch/report/ar6/syr/"
+        }
+      ],
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5,
+        "notes": "Monitoring is necessary but not sufficient. The bottleneck is action, not information."
+      }
+    },
+    {
+      "id": "energy_to_space",
+      "from_domain": "energy",
+      "to_domain": "space",
+      "weight": 1.0,
+      "weight_justification": "Cheaper energy reduces propellant production costs (LOX, LH2, methane). SpaceX Starship uses ~3,400 tons of methane per launch. Also enables electric propulsion ground testing and in-situ resource utilization.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Propellant is 0.2-2% of launch cost currently, but at scale (1000+ launches/yr) it becomes dominant. Green methane at $1/kg vs $3/kg changes Starship economics",
+          "source_url": "https://www.spacex.com/vehicles/starship/"
+        },
+        {
+          "measured_amplification": "In-situ propellant production on Mars requires ~15 kW for Sabatier process per kg CH4",
+          "source_url": "https://www.nasa.gov/mission/mars-oxygen-in-situ-resource-utilization-experiment-moxie/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Propellant is small fraction of launch cost; vehicle reusability matters more"
+        }
+      ],
+      "from_index": 2,
+      "to_index": 7,
+      "v5_weight": null
+    },
+    {
+      "id": "manufacturing_to_energy",
+      "from_domain": "manufacturing",
+      "to_domain": "energy",
+      "weight": 1.8,
+      "weight_justification": "Solar panel and wind turbine costs are dominated by manufacturing (80%+ for solar modules). Manufacturing learning curves directly drive Wright's Law cost reductions in energy tech. Perovskite solar requires precision manufacturing at scale.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Solar module: 80% of cost is manufacturing. LONGi automation reduced cell cost 40% in 3 years (2019-2022)",
+          "source_url": "https://www.longi.com/en/news/record-breaking-solar-cell-efficiency/"
+        },
+        {
+          "measured_amplification": "Wind turbine: Vestas automated blade manufacturing reduced cost per MW by 25% (2018-2023)",
+          "source_url": "https://www.vestas.com/en/sustainability/reports-and-ratings"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Raw material costs (silicon, rare earths) also significant and not manufacturing-dependent"
+        }
+      ],
+      "from_index": 8,
+      "to_index": 2,
+      "v5_weight": null
+    },
+    {
+      "id": "manufacturing_to_batteries",
+      "from_domain": "manufacturing",
+      "to_domain": "batteries",
+      "weight": 1.8,
+      "weight_justification": "Battery cost is overwhelmingly manufacturing-driven. Gigafactory scale, dry electrode coating, cell-to-pack design \u2014 all are manufacturing innovations. CATL's cost leadership is primarily manufacturing efficiency.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Tesla 4680 cell: manufacturing redesign targeting 56% cost reduction per kWh",
+          "source_url": "https://www.tesla.com/blog/battery-day"
+        },
+        {
+          "measured_amplification": "CATL dry electrode: 30% fewer manufacturing steps \u2192 20% cost reduction",
+          "source_url": "https://www.catl.com/en/news/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Material chemistry breakthroughs (LFP, sodium-ion) also drive cost reduction independent of manufacturing"
+        }
+      ],
+      "from_index": 8,
+      "to_index": 3,
+      "v5_weight": null
+    },
+    {
+      "id": "manufacturing_to_space",
+      "from_domain": "manufacturing",
+      "to_domain": "space",
+      "weight": 1.2,
+      "weight_justification": "Additive manufacturing (3D printing) revolutionizing rocket engine production. Relativity Space printed 85% of Terran 1. SpaceX prints SuperDraco engines. In-space manufacturing enables orbital construction.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Relativity Space: 3D printed rocket reduced part count from 100,000 to 1,000. Manufacturing time from 2 years to 60 days",
+          "source_url": "https://www.relativityspace.com/terran-r"
+        },
+        {
+          "measured_amplification": "SpaceX Raptor: 3D printed injector reduced production time 80%, cost 60%",
+          "source_url": "https://www.spacex.com/vehicles/starship/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Most launch cost is R&D amortization and operations, not manufacturing per se"
+        }
+      ],
+      "from_index": 8,
+      "to_index": 7,
+      "v5_weight": null
+    },
+    {
+      "id": "manufacturing_to_robotics",
+      "from_domain": "manufacturing",
+      "to_domain": "robotics",
+      "weight": 1.5,
+      "weight_justification": "Robot cost is driven by precision manufacturing of actuators, gearboxes, and sensors. Manufacturing scale-up enables mass-produced humanoid robots (Tesla Optimus targeting $20K). 3D printing enables rapid prototyping of custom robots.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Tesla Optimus: mass manufacturing targeting $20K unit cost vs $100K+ for current humanoids. 5x cost reduction from manufacturing scale",
+          "source_url": "https://www.tesla.com/AI"
+        },
+        {
+          "measured_amplification": "Harmonic drive gearboxes: Chinese manufacturers (Green Harmonic) reduced cost 60% through manufacturing scale",
+          "source_url": "https://ifr.org/ifr-press-releases/news/world-robotics-2024"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Software/AI is the bigger bottleneck for robotics than hardware manufacturing"
+        }
+      ],
+      "from_index": 8,
+      "to_index": 6,
+      "v5_weight": null
+    },
+    {
+      "id": "space_to_energy",
+      "from_domain": "space",
+      "to_domain": "energy",
+      "weight": 1.0,
+      "weight_justification": "Space-based solar power R&D (Caltech SSPP, ESA Solaris). Satellite-based grid monitoring and optimization. Reduced launch costs enable orbital energy infrastructure that was previously uneconomical.",
+      "activation_threshold": 20,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Caltech SSPP: first space-to-earth wireless power transmission demo (2023). Feasibility requires <$100/kg to orbit",
+          "source_url": "https://www.caltech.edu/about/news/in-a-first-caltechs-space-solar-power-demonstrator-wirelessly-transmits-power-in-space"
+        },
+        {
+          "measured_amplification": "ESA Solaris: feasibility study for GW-scale space solar by 2040s. Requires 100x launch cost reduction",
+          "source_url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/SOLARIS"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Terrestrial solar is already so cheap that space-based solar may never be economically competitive for Earth use"
+        }
+      ],
+      "from_index": 7,
+      "to_index": 2,
+      "v5_weight": null
+    },
+    {
+      "id": "space_to_environment",
+      "from_domain": "space",
+      "to_domain": "environment",
+      "weight": 1.2,
+      "weight_justification": "Earth observation satellites are critical for climate monitoring, deforestation tracking, ocean health, and environmental enforcement. Cheaper launches enable mega-constellations for real-time environmental monitoring.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Planet Labs: 200+ satellites providing daily global imaging. Enabled detection of illegal deforestation reducing Amazon loss 20% in monitored areas",
+          "source_url": "https://www.planet.com/impact/"
+        },
+        {
+          "measured_amplification": "Copernicus/Sentinel: EU satellite data enables methane leak detection. UNEP IMEO tracked 1,500 super-emitters in 2023",
+          "source_url": "https://www.unep.org/explore-topics/energy/what-we-do/methane/imeo"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Monitoring alone doesn't solve environmental problems \u2014 policy and enforcement are separate challenges"
+        }
+      ],
+      "from_index": 7,
+      "to_index": 12,
+      "v5_weight": null
+    },
+    {
+      "id": "drug_to_genomics",
+      "from_domain": "drug",
+      "to_domain": "genomics",
+      "weight": 1.2,
+      "weight_justification": "Drug discovery drives genomics R&D investment and demand for sequencing. Pharmacogenomics (drug-gene interactions) is a major driver of sequencing volume. mRNA platform (Moderna/BioNTech) creates demand for rapid genome reading.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Pharmacogenomics market $7.3B (2023) \u2192 $18.3B (2030), driving sequencing demand 2.5x",
+          "source_url": "https://www.grandviewresearch.com/industry-analysis/pharmacogenomics-market"
+        },
+        {
+          "measured_amplification": "COVID mRNA vaccines: drove 10x increase in genomic surveillance sequencing (GISAID submissions)",
+          "source_url": "https://gisaid.org/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Sequencing cost reduction is driven more by hardware competition than drug industry demand"
+        }
+      ],
+      "from_index": 5,
+      "to_index": 4,
+      "v5_weight": null
+    },
+    {
+      "id": "drug_to_bci",
+      "from_domain": "drug",
+      "to_domain": "bci",
+      "weight": 0.8,
+      "weight_justification": "Pharmaceutical neuroscience research informs BCI target identification. Drug companies investing in neuromodulation as alternative delivery. Biocompatible coatings from drug delivery tech improve electrode longevity.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Abbott/Medtronic neurostim: pharma-derived biocompatible coatings extend electrode life 3x",
+          "source_url": "https://www.neuromodulation.abbott/us/en/homepage.html"
+        },
+        {
+          "measured_amplification": "Pharma DBS trials identified 15+ new brain targets applicable to BCI research (Nature Neuroscience review 2023)",
+          "source_url": "https://www.nature.com/articles/s41593-022-01238-0"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "BCI engineering challenges (electrode density, wireless power) are mostly independent of drug research"
+        }
+      ],
+      "from_index": 5,
+      "to_index": 10,
+      "v5_weight": null
+    },
+    {
+      "id": "bci_to_ai",
+      "from_domain": "bci",
+      "to_domain": "ai",
+      "weight": 0.8,
+      "weight_justification": "Neural recordings inform neuromorphic AI architectures. Brain-computer interface data provides ground truth for neural network design. Neuralink and similar projects generate neuroscience data that feeds back into AI.",
+      "activation_threshold": 20,
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 1.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Intel Loihi neuromorphic chip directly inspired by BCI electrode recordings. 1000x energy efficiency for spiking neural networks",
+          "source_url": "https://www.intel.com/content/www/us/en/research/neuromorphic-computing.html"
+        },
+        {
+          "measured_amplification": "Brain organoid computing (DishBrain): biological neurons used as compute substrate, informed by BCI electrode technology",
+          "source_url": "https://www.nature.com/articles/s41928-023-01069-w"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Most AI progress is software/hardware scaling, not neuroscience-inspired. The 'brain as model' approach has had limited practical AI impact so far"
+        }
+      ],
+      "from_index": 10,
+      "to_index": 0,
+      "v5_weight": null
+    },
+    {
+      "id": "bci_to_vr",
+      "from_domain": "bci",
+      "to_domain": "vr",
+      "weight": 1.2,
+      "weight_justification": "Direct neural interfaces are the ultimate VR input device. Haptic feedback, thought-based navigation, sensory augmentation. Even non-invasive EEG-based BCIs are being integrated into VR headsets.",
+      "activation_threshold": 30,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Galea (OpenBCI + VR): EEG-integrated VR headset for emotion-responsive environments. Shipped 2023",
+          "source_url": "https://galea.co/"
+        },
+        {
+          "measured_amplification": "Meta neural wristband: EMG-based VR input, 10x faster than hand tracking. Acquired CTRL-labs for $500M+",
+          "source_url": "https://about.meta.com/realitylabs/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Current BCIs are too low-bandwidth and invasive for consumer VR. Non-invasive options (EEG/EMG) have limited spatial resolution"
+        }
+      ],
+      "from_index": 10,
+      "to_index": 13,
+      "v5_weight": null
+    },
+    {
+      "id": "environment_to_energy",
+      "from_domain": "environment",
+      "to_domain": "energy",
+      "weight": 1.0,
+      "weight_justification": "Environmental monitoring drives smart grid optimization. Carbon pricing creates demand for clean energy deployment. Environmental remediation tech (DAC) creates baseload demand driving energy innovation.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "EU ETS carbon price ($80/ton) drove 15% increase in renewable energy investment 2021-2023",
+          "source_url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en"
+        },
+        {
+          "measured_amplification": "DAC at scale (Mt/yr) would require dedicated renewable power plants, driving GW-scale clean energy buildout",
+          "source_url": "https://www.iea.org/reports/direct-air-capture-2022"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Clean energy investment is driven more by economics (LCOE) than environmental regulation"
+        }
+      ],
+      "from_index": 12,
+      "to_index": 2,
+      "v5_weight": null
+    },
+    {
+      "id": "environment_to_materials",
+      "from_domain": "environment",
+      "to_domain": "materials",
+      "weight": 0.8,
+      "weight_justification": "Environmental constraints drive green materials innovation. Demand for sustainable materials (bio-plastics, green cement, recycled metals) accelerates materials science. Carbon capture requires novel sorbent materials.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 1.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "EU CBAM driving investment in green steel, green cement, green aluminum \u2014 materials R&D up 40% since 2020",
+          "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+        },
+        {
+          "measured_amplification": "DAC sorbent research: 500+ novel materials screened 2020-2024, accelerated by need for CO2 capture",
+          "source_url": "https://www.nature.com/articles/s41586-022-04583-7"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Most materials innovation is driven by performance requirements (strength, weight) not environmental regulation"
+        }
+      ],
+      "from_index": 12,
+      "to_index": 9,
+      "v5_weight": null
+    },
+    {
+      "id": "quantum_to_ai",
+      "from_domain": "quantum",
+      "to_domain": "ai",
+      "weight": 1.0,
+      "weight_justification": "Quantum computing enables optimization problems intractable for classical AI. Quantum ML (QML) algorithms show quadratic speedups for specific tasks. Google Quantum AI demonstrated quantum advantage for sampling tasks relevant to generative models.",
+      "activation_threshold": 50,
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Google Willow (2024): quantum error correction milestone, path to 1M+ logical qubits by 2030s",
+          "source_url": "https://blog.google/technology/research/google-willow-quantum-chip/"
+        },
+        {
+          "measured_amplification": "IBM quantum utility experiment (2023): 127-qubit circuit outperformed classical simulation for specific tasks",
+          "source_url": "https://www.nature.com/articles/s41586-023-06096-3"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Quantum advantage for practical ML tasks is unproven. Most QML speedups are theoretical. Classical algorithms keep improving and closing the gap"
+        }
+      ],
+      "from_index": 11,
+      "to_index": 0,
+      "v5_weight": null
+    },
+    {
+      "id": "quantum_to_drug",
+      "from_domain": "quantum",
+      "to_domain": "drug",
+      "weight": 1.5,
+      "weight_justification": "Quantum chemistry simulation is the killer app for quantum computing. Molecular simulation at quantum scale enables exact binding energy calculations impossible classically. Could reduce drug discovery from 10 years to months.",
+      "activation_threshold": 50,
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 3.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Google simulated H-chain molecules (2020) \u2014 first step toward pharma-relevant molecular simulation",
+          "source_url": "https://www.science.org/doi/10.1126/science.abb9811"
+        },
+        {
+          "measured_amplification": "Roche/Cambridge Quantum: quantum molecular simulation partnership targeting 10x faster lead optimization",
+          "source_url": "https://www.quantinuum.com/news/quantinuum-and-roche-collaborate-on-quantum-computing-for-drug-discovery"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Fault-tolerant quantum computers with millions of qubits needed for pharma-relevant molecules \u2014 still years away"
+        }
+      ],
+      "from_index": 11,
+      "to_index": 5,
+      "v5_weight": null
+    },
+    {
+      "id": "quantum_to_compute",
+      "from_domain": "quantum",
+      "to_domain": "compute",
+      "weight": 1.2,
+      "weight_justification": "Quantum computing is a paradigm extension of classical compute. Hybrid quantum-classical architectures. Quantum random number generation. Post-quantum cryptography drives compute architecture changes.",
+      "activation_threshold": 50,
+      "saturation": {
+        "model": "asymptotic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Quantum random number generators: 10x faster than classical, commercialized (ID Quantique)",
+          "source_url": "https://www.idquantique.com/"
+        },
+        {
+          "measured_amplification": "NIST post-quantum cryptography standards (2024) driving hardware changes across all compute",
+          "source_url": "https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Quantum and classical compute may remain largely complementary rather than quantum replacing classical"
+        }
+      ],
+      "from_index": 11,
+      "to_index": 1,
+      "v5_weight": null
+    },
+    {
+      "id": "robotics_to_energy",
+      "from_domain": "robotics",
+      "to_domain": "energy",
+      "weight": 1.2,
+      "weight_justification": "Robotic installation and maintenance of solar and wind. Autonomous drones for wind turbine inspection. Robots enable deployment at scale in remote/hostile locations (offshore wind, desert solar).",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "AES + Terabase: robotic solar installation 3x faster, 50% fewer workers. Targeting $0.01/W installation cost",
+          "source_url": "https://www.terabase.energy/"
+        },
+        {
+          "measured_amplification": "SkySpecs: autonomous drone inspection reduced wind turbine downtime 30%, O&M costs 25%",
+          "source_url": "https://skyspecs.com/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Installation labor is <20% of solar LCOE; module cost matters more"
+        }
+      ],
+      "from_index": 6,
+      "to_index": 2,
+      "v5_weight": null
+    },
+    {
+      "id": "robotics_to_environment",
+      "from_domain": "robotics",
+      "to_domain": "environment",
+      "weight": 1.0,
+      "weight_justification": "Robotic systems for environmental remediation: ocean cleanup, precision agriculture (reducing pesticide use), autonomous reforestation drones, underwater pipeline inspection preventing leaks.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "The Ocean Cleanup: autonomous systems collected 200+ tons of plastic from Great Pacific Garbage Patch (2023)",
+          "source_url": "https://theoceancleanup.com/"
+        },
+        {
+          "measured_amplification": "DroneSeed: autonomous reforestation drones plant trees 6x faster than manual crews",
+          "source_url": "https://www.droneseed.com/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Scale of environmental challenges dwarfs current robotic capabilities"
+        }
+      ],
+      "from_index": 6,
+      "to_index": 12,
+      "v5_weight": null
+    },
+    {
+      "id": "robotics_to_genomics",
+      "from_domain": "robotics",
+      "to_domain": "genomics",
+      "weight": 1.5,
+      "weight_justification": "Lab automation is THE driver of genomics throughput. Automated liquid handling, robotic PCR setup, automated sequencing prep. Without lab robots, the cost per genome would be 10-100x higher.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Illumina NovaSeq: fully automated library prep \u2192 10x throughput increase, 5x cost reduction per genome",
+          "source_url": "https://www.illumina.com/systems/sequencing-platforms/novaseq-x-plus.html"
+        },
+        {
+          "measured_amplification": "BGI DNBSEQ: automated sample-to-results pipeline reduced sequencing cost to $100/genome (2023)",
+          "source_url": "https://www.bgi.com/us/sequencing-services"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Sequencing chemistry innovation matters as much as automation"
+        }
+      ],
+      "from_index": 6,
+      "to_index": 4,
+      "v5_weight": null
+    },
+    {
+      "id": "genomics_to_materials",
+      "from_domain": "genomics",
+      "to_domain": "materials",
+      "weight": 1.0,
+      "weight_justification": "Bio-manufacturing of materials: spider silk proteins, bio-plastics, mycelium-based materials. Protein engineering enables materials with properties impossible to achieve synthetically.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Bolt Threads: engineered microbes produce spider silk protein at industrial scale",
+          "source_url": "https://boltthreads.com/"
+        },
+        {
+          "measured_amplification": "Ecovative: mycelium-based packaging replacing styrofoam, grown in 7 days vs petroleum synthesis",
+          "source_url": "https://www.ecovative.com/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Bio-manufactured materials remain niche and expensive compared to petroleum-based alternatives"
+        }
+      ],
+      "from_index": 4,
+      "to_index": 9,
+      "v5_weight": null
+    },
+    {
+      "id": "sensors_to_ai",
+      "from_domain": "sensors",
+      "to_domain": "ai",
+      "weight": 1.2,
+      "weight_justification": "More sensor data feeds better AI models. LiDAR, radar, cameras, IoT sensors generate the training data that AI requires. The sensor explosion (100B+ IoT devices by 2030) provides the substrate for AI improvement.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.5
+      },
+      "evidence": [
+        {
+          "measured_amplification": "Tesla FSD: fleet of 5M+ cars with cameras generating billions of miles of sensor data \u2192 10x improvement in self-driving per year",
+          "source_url": "https://www.tesla.com/AI"
+        },
+        {
+          "measured_amplification": "IoT sensor data: 79 ZB generated in 2025 (IDC), providing training data for industrial AI applications",
+          "source_url": "https://www.idc.com/getdoc.jsp?containerId=prUS51075024"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "AI improvement is driven more by algorithmic innovation and compute scaling than by data volume alone (GPT scaling laws)"
+        }
+      ],
+      "from_index": 14,
+      "to_index": 0,
+      "v5_weight": null
+    },
+    {
+      "id": "vr_to_manufacturing",
+      "from_domain": "vr",
+      "to_domain": "manufacturing",
+      "weight": 1.0,
+      "weight_justification": "Digital twins and VR-assisted design accelerate manufacturing iteration. VR training reduces manufacturing errors. BMW, Boeing, and Siemens use VR extensively for factory design and worker training.",
+      "activation_threshold": 10,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 2.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "BMW: VR factory planning reduced production line setup time 30%, caught 80% of design errors before physical build",
+          "source_url": "https://www.bmwgroup.com/en/innovation/technologies-and-mobility/virtual-reality-and-mixed-reality.html"
+        },
+        {
+          "measured_amplification": "Siemens digital twin: reduced time-to-market 20-50% across industrial customers (2023 annual report)",
+          "source_url": "https://www.siemens.com/global/en/products/digital-twin.html"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Most manufacturing improvement comes from process engineering and materials, not VR tools"
+        }
+      ],
+      "from_index": 13,
+      "to_index": 8,
+      "v5_weight": null
+    },
+    {
+      "id": "batteries_to_environment",
+      "from_domain": "batteries",
+      "to_domain": "environment",
+      "weight": 1.5,
+      "weight_justification": "Grid-scale battery storage enables 100% renewable grids by solving intermittency. Without cheap batteries, renewable energy cannot displace fossil fuels for baseload power, and environmental goals are unachievable.",
+      "activation_threshold": 5,
+      "saturation": {
+        "model": "logarithmic",
+        "max_effective_weight": 3.0
+      },
+      "evidence": [
+        {
+          "measured_amplification": "California: 10 GW of battery storage eliminated 60% of natural gas peaker plant usage by 2024",
+          "source_url": "https://www.caiso.com/documents/2024-summer-market-performance-report.pdf"
+        },
+        {
+          "measured_amplification": "BNEF: battery storage at $50/kWh enables 90%+ renewable grids globally. Current trajectory reaches this by 2030",
+          "source_url": "https://about.bnef.com/electric-vehicle-outlook/"
+        }
+      ],
+      "counter_evidence": [
+        {
+          "point": "Long-duration storage (seasonal) requires different technologies than lithium-ion batteries"
+        }
+      ],
+      "from_index": 3,
+      "to_index": 12,
+      "v5_weight": null
+    }
+  ],
+  "key_decisions": {
+    "ai_to_ai_weight": {
+      "chosen_weight": 1.8,
+      "v5_weight": 2.5,
+      "reduction_reason": "The v5 weight of 2.5 was the self-identified 'biggest weakness' of the model. After careful analysis, the evidence supports three narrow channels of AI self-improvement (NAS, chip design, coding assistance) but none demonstrate general recursive self-improvement. Key evidence: (1) NAS ~100x speedup but within human-defined search spaces; (2) AlphaChip 10-30% PPA improvement, comparable to one generation of human iteration; (3) Copilot 1.55x on isolated tasks, ~1.3x on real projects. Critical counter-evidence: model collapse (Shumailov et al., Nature 2024) shows AI training on AI output degrades quality. Scaling laws show power-law (diminishing) returns. No documented case of AI recursively improving its own general capability. Weight of 1.8 acknowledges real narrow improvements without assuming general recursive acceleration.",
+      "sensitivity": "This parameter changes 2039 AI improvement median by roughly 2-5x per 0.5 change in weight. At 1.8 vs 2.5, the model produces significantly more conservative (and defensible) AI projections.",
+      "academic_defense": "The weight is derived from documented evidence, not speculation. Each component (NAS: 100x narrow speedup, chip design: 10-30% per generation, coding: 1.3-1.5x) is individually sourced. The composite weight of 1.8 reflects a geometric mean of these effects weighted by breadth of applicability. Counter-evidence (model collapse, diminishing scaling returns) provides an empirical ceiling."
+    },
+    "top_5_highest_weight_interactions": [
+      {
+        "interaction": "energy -> environment",
+        "weight": 2.5,
+        "justification": "Direct causal link: energy is 50-70% of desalination and carbon capture cost. Best-documented quantitative relationship in the matrix.",
+        "counter_evidence": "Jevons Paradox: cheap energy may increase total consumption. Capital costs and non-energy factors also matter."
+      },
+      {
+        "interaction": "materials -> batteries",
+        "weight": 2.5,
+        "justification": "LFP revolution and sodium-ion emergence demonstrate materials innovation as primary driver alongside manufacturing scale.",
+        "counter_evidence": "Wright's Law (manufacturing scale) may explain most of battery cost decline, with materials providing step-function shifts."
+      },
+      {
+        "interaction": "compute -> ai",
+        "weight": 2.5,
+        "justification": "Scaling laws are the most robust empirical relationship in AI. Power law relationship well-documented across model sizes and architectures.",
+        "counter_evidence": "Diminishing returns: 10x compute yields ~2x benchmark improvement. Training costs becoming prohibitive."
+      },
+      {
+        "interaction": "ai -> genomics",
+        "weight": 2.5,
+        "justification": "AlphaFold solved protein structure prediction. popEVE classified 100M+ variants. Multiple independent confirmations.",
+        "counter_evidence": "Clinical interpretation still requires human expertise. Static structure prediction =/= understanding protein dynamics."
+      },
+      {
+        "interaction": "ai -> materials",
+        "weight": 2.5,
+        "justification": "GNoME increased known stable materials 10x. A-Lab demonstrated autonomous synthesis. Strongest evidence of AI accelerating a science domain.",
+        "counter_evidence": "Prediction-to-synthesis gap: 380,000 predicted, 736 verified. Materials development timeline not yet shortened."
+      }
+    ],
+    "weight_changes_from_v5": [
+      {
+        "interaction": "ai -> ai",
+        "v5_weight": 2.5,
+        "v6_weight": 1.8,
+        "reason": "No evidence of general recursive self-improvement. Model collapse counter-evidence. Narrow improvements well-documented but do not support a weight above 2.0."
+      },
+      {
+        "interaction": "ai -> drug",
+        "v5_weight": 3.0,
+        "v6_weight": 2.2,
+        "reason": "Google AI co-scientist is a single demonstration. FDA timelines unchanged. Eroom's Law not reversed. Only one AI-discovered drug (INS018_055) in Phase II."
+      },
+      {
+        "interaction": "ai -> materials",
+        "v5_weight": 3.0,
+        "v6_weight": 2.5,
+        "reason": "GNoME is transformative for discovery but prediction-to-synthesis gap is enormous. 380,000 predicted vs 736 experimentally verified."
+      },
+      {
+        "interaction": "ai -> robotics",
+        "v5_weight": 2.5,
+        "v6_weight": 2.0,
+        "reason": "Foundation models impressive in demos but most deployed robots still use traditional control. Lab-to-production gap significant."
+      }
+    ],
+    "new_interactions_added": [
+      "ai -> environment (1.8): AI grid optimization, carbon capture materials, climate modeling",
+      "ai -> vr (2.0): DLSS, NeRF, procedural generation",
+      "ai -> sensors (2.2): Computational photography, sensor fusion, edge AI",
+      "energy -> environment (2.5): Desalination, carbon capture, green hydrogen all energy-dominated costs",
+      "robotics -> space (1.5): Autonomous operations, reusable landing, on-orbit servicing",
+      "compute -> genomics (1.8): Bioinformatics scaling, population genomics, DeepVariant",
+      "energy -> manufacturing (1.2): Energy-intensive industries benefit directly from cheap energy",
+      "sensors -> robotics (1.8): Cheap lidar, MEMS, force-torque sensors enabling affordable robots",
+      "compute -> vr (2.2): VR requires 7x more compute than flat displays; GPU scaling directly enables VR quality",
+      "batteries -> robotics (1.5): Battery cost/density constrains mobile robot operating time and cost",
+      "materials -> sensors (1.5): Quantum dots, MEMS advances, new sensing modalities",
+      "vr -> bci (1.0): VR as controlled stimulus for BCI calibration and rehabilitation",
+      "genomics -> environment (1.2): Synthetic biology for carbon fixation, bioremediation",
+      "batteries -> energy (2.0): Storage solving intermittency, enabling dispatchable renewables",
+      "space -> sensors (1.2): Cheap launch enabling satellite sensor constellations",
+      "sensors -> environment (1.0): Monitoring networks enabling targeted environmental intervention"
+    ]
+  }
+}

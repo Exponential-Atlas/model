@@ -1,0 +1,64 @@
+{
+  "id": "ai_context",
+  "name": "AI Context Window",
+  "description": "Maximum context window size for frontier language models, in tokens",
+  "unit": "tokens",
+  "direction": "increasing",
+  "category": "AI",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 1000000000000,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2020,
+      "value": 2048,
+      "source": "OpenAI GPT-3 context window",
+      "source_url": "https://arxiv.org/abs/2005.14165"
+    },
+    {
+      "year": 2022.3,
+      "value": 4096,
+      "source": "OpenAI ChatGPT / GPT-3.5 context window",
+      "source_url": "https://openai.com/blog/chatgpt"
+    },
+    {
+      "year": 2023.3,
+      "value": 32000,
+      "source": "OpenAI GPT-4 32K context window",
+      "source_url": "https://openai.com/research/gpt-4"
+    },
+    {
+      "year": 2023.7,
+      "value": 100000,
+      "source": "Anthropic Claude 2 — 100K context",
+      "source_url": "https://www.anthropic.com/news/claude-2"
+    },
+    {
+      "year": 2024.2,
+      "value": 200000,
+      "source": "Anthropic Claude 3 — 200K context",
+      "source_url": "https://www.anthropic.com/news/claude-3-family"
+    },
+    {
+      "year": 2024.5,
+      "value": 1000000,
+      "source": "Google Gemini 1.5 Pro — 1M token context",
+      "source_url": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
+    },
+    {
+      "year": 2025,
+      "value": 2000000,
+      "source": "Google Gemini 1.5 Pro — 2M token context",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini"
+    },
+    {
+      "year": 2025.5,
+      "value": 5000000,
+      "source": "Frontier models expanding to 5M+ tokens (Magic.dev, Gemini)",
+      "source_url": "https://magic.dev/"
+    }
+  ]
+}

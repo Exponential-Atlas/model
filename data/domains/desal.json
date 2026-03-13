@@ -1,0 +1,40 @@
+{
+  "id": "desal",
+  "name": "Desalination Cost",
+  "description": "Cost per cubic metre of desalinated seawater from reverse-osmosis plants",
+  "unit": "$/m3",
+  "direction": "decreasing",
+  "category": "Environment",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 0.05,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2000,
+      "value": 2.5,
+      "source": "Global Water Intelligence — Desalination Markets Report",
+      "source_url": "https://www.globalwaterintel.com/market-reports/desalination-markets"
+    },
+    {
+      "year": 2010,
+      "value": 1,
+      "source": "Global Water Intelligence — Desalination Markets Report",
+      "source_url": "https://www.globalwaterintel.com/market-reports/desalination-markets"
+    },
+    {
+      "year": 2020,
+      "value": 0.5,
+      "source": "IDA Desalination Yearbook / IRENA Water Desalination Using Renewable Energy",
+      "source_url": "https://www.irena.org/publications/2012/Dec/Water-Desalination-Using-Renewable-Energy"
+    },
+    {
+      "year": 2025,
+      "value": 0.35,
+      "source": "IDE Technologies / ACWA Power — latest SWRO plant bids",
+      "source_url": "https://www.ide-tech.com/en/solutions/desalination/"
+    }
+  ]
+}

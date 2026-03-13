@@ -1,0 +1,58 @@
+{
+  "id": "bioprinting_res",
+  "name": "Bioprinting Resolution",
+  "description": "Minimum feature size achievable in bioprinting (3D printing of living cells and biomaterials). Smaller values indicate higher resolution and finer structural control. Tracks progress from extrusion-based to light-based and acoustic bioprinting.",
+  "unit": "micrometers",
+  "direction": "decreasing",
+  "category": "Biology",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2005,
+      "value": 500,
+      "source": "Boland et al. — early inkjet bioprinting of cells achieving ~500um minimum feature size",
+      "source_url": "https://doi.org/10.1002/adfm.200500476"
+    },
+    {
+      "year": 2009,
+      "value": 300,
+      "source": "Guillotin & Guillemot — laser-assisted bioprinting (LAB) achieving ~300um resolution with cell viability",
+      "source_url": "https://doi.org/10.1016/j.biomaterials.2010.10.005"
+    },
+    {
+      "year": 2012,
+      "value": 200,
+      "source": "Organovo — NovoGen bioprinting platform for liver tissue; extrusion-based with ~200um features",
+      "source_url": "https://doi.org/10.1088/1758-5082/4/2/022001"
+    },
+    {
+      "year": 2015,
+      "value": 100,
+      "source": "Kang et al. (Wake Forest) — ITOP system printing human-scale tissue constructs with ~100um resolution",
+      "source_url": "https://doi.org/10.1038/nbt.3413"
+    },
+    {
+      "year": 2018,
+      "value": 50,
+      "source": "Grigoryan et al. (Rice/UW) — SLATE stereolithography bioprinting with ~50um features for vascular networks",
+      "source_url": "https://doi.org/10.1126/science.aav9750"
+    },
+    {
+      "year": 2020,
+      "value": 25,
+      "source": "Bernal et al. — volumetric bioprinting achieving ~25um feature resolution",
+      "source_url": "https://doi.org/10.1002/adma.201904209"
+    },
+    {
+      "year": 2023,
+      "value": 10,
+      "source": "Two-photon polymerization bioprinting — sub-cellular resolution approaching 5-10um demonstrated in research settings",
+      "source_url": "https://doi.org/10.1038/s41467-023-37644-8"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "vr_res",
+  "name": "VR Resolution",
+  "description": "Angular resolution of consumer VR headsets in pixels per degree",
+  "unit": "ppd",
+  "direction": "increasing",
+  "category": "VR/AR",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": 120,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2016,
+      "value": 13,
+      "source": "HTC Vive / Oculus Rift CV1 specifications",
+      "source_url": "https://www.meta.com/quest/"
+    },
+    {
+      "year": 2020,
+      "value": 20,
+      "source": "HP Reverb G2 / Valve Index specifications",
+      "source_url": "https://www.hp.com/us-en/vr/reverb-g2-vr-headset.html"
+    },
+    {
+      "year": 2024,
+      "value": 35,
+      "source": "Apple Vision Pro — ~34 ppd / Meta Quest 3",
+      "source_url": "https://www.apple.com/apple-vision-pro/specs/"
+    },
+    {
+      "year": 2025,
+      "value": 40,
+      "source": "Samsung Muhan / next-gen consumer headsets targeting ~40 ppd",
+      "source_url": "https://news.samsung.com/global/category/xr"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "storage_lcoe",
+  "name": "Battery Storage LCOE",
+  "description": "Levelized cost of energy storage from utility-scale battery installations",
+  "unit": "$/MWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 2,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2015,
+      "value": 500,
+      "source": "Lazard Levelized Cost of Storage Analysis v9.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2017,
+      "value": 350,
+      "source": "Lazard Levelized Cost of Storage Analysis v9.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2019,
+      "value": 200,
+      "source": "Lazard Levelized Cost of Storage Analysis v9.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2020,
+      "value": 150,
+      "source": "BloombergNEF Energy Storage Outlook 2020",
+      "source_url": "https://about.bnef.com/blog/battery-pack-prices-fall-to-an-average-of-132-kwh/"
+    },
+    {
+      "year": 2022,
+      "value": 140,
+      "source": "BloombergNEF Energy Storage Outlook 2022",
+      "source_url": "https://about.bnef.com/blog/cost-of-new-renewables-temporarily-rises-as-inflation-bites/"
+    },
+    {
+      "year": 2024,
+      "value": 90,
+      "source": "Lazard Levelized Cost of Storage Analysis v17.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2025,
+      "value": 60,
+      "source": "BloombergNEF Energy Storage Outlook 2025",
+      "source_url": "https://about.bnef.com/blog/cost-of-clean-energy-technologies-drop-as-supply-of-key-components-grows/"
+    }
+  ]
+}

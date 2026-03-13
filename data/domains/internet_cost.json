@@ -1,0 +1,76 @@
+{
+  "id": "internet_cost",
+  "name": "Internet Cost per GB",
+  "description": "Global average cost of fixed-line internet per gigabyte of data. Tracks the dramatic decline in connectivity costs driven by fiber deployment, competition, and technology improvements.",
+  "unit": "$/GB",
+  "direction": "decreasing",
+  "category": "Compute",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2000,
+      "value": 7.20,
+      "source": "ITU/TeleGeography — early broadband era, 512kbps DSL typical, ~$40/mo for limited data",
+      "source_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx"
+    },
+    {
+      "year": 2005,
+      "value": 2.50,
+      "source": "ITU Measuring the Information Society 2009 — broadband spreading, higher caps",
+      "source_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/publications/mis/default.aspx"
+    },
+    {
+      "year": 2008,
+      "value": 1.00,
+      "source": "ITU/cable.co.uk historical data — ADSL2+ and early DOCSIS 3.0",
+      "source_url": "https://www.cable.co.uk/broadband/pricing/worldwide-comparison/"
+    },
+    {
+      "year": 2010,
+      "value": 0.50,
+      "source": "ITU Measuring the Information Society 2012 — increasing data caps and speed tiers",
+      "source_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/publications/mis2012.aspx"
+    },
+    {
+      "year": 2013,
+      "value": 0.20,
+      "source": "ITU/OECD Communications Outlook — fiber and cable delivering hundreds of GB",
+      "source_url": "https://www.oecd.org/sti/broadband/broadband-statistics/"
+    },
+    {
+      "year": 2015,
+      "value": 0.10,
+      "source": "ITU Measuring the Information Society 2016 — unlimited plans becoming common in developed markets",
+      "source_url": "https://www.itu.int/en/ITU-D/Statistics/Pages/publications/mis2016.aspx"
+    },
+    {
+      "year": 2018,
+      "value": 0.05,
+      "source": "cable.co.uk Worldwide Broadband Price Research 2019 — global average declining",
+      "source_url": "https://www.cable.co.uk/broadband/pricing/worldwide-comparison/"
+    },
+    {
+      "year": 2020,
+      "value": 0.03,
+      "source": "cable.co.uk Worldwide Broadband Price Research 2021",
+      "source_url": "https://www.cable.co.uk/broadband/pricing/worldwide-comparison/"
+    },
+    {
+      "year": 2022,
+      "value": 0.02,
+      "source": "cable.co.uk Worldwide Broadband Price Research 2023 — effective cost per GB continues declining",
+      "source_url": "https://www.cable.co.uk/broadband/pricing/worldwide-comparison/"
+    },
+    {
+      "year": 2024,
+      "value": 0.015,
+      "source": "cable.co.uk / ITU 2024 estimates — fiber expansion driving further declines globally",
+      "source_url": "https://www.cable.co.uk/broadband/pricing/worldwide-comparison/"
+    }
+  ]
+}

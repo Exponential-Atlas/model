@@ -1,0 +1,52 @@
+{
+  "id": "nuclear_smr",
+  "name": "Small Modular Reactor Cost",
+  "description": "Estimated capital cost per watt of electrical capacity for small modular reactors (SMRs). Very few operational units exist; data is largely from engineering estimates, regulatory filings, and first-of-a-kind projects.",
+  "unit": "$/W",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "low",
+  "best_fit": "log_linear",
+  "physical_floor": 1.0,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2015,
+      "value": 15.0,
+      "source": "NEI/DOE — early SMR design estimates; NuScale initial cost projections $12-16/W range",
+      "source_url": "https://www.energy.gov/ne/advanced-small-modular-reactors-smrs"
+    },
+    {
+      "year": 2018,
+      "value": 10.0,
+      "source": "NuScale Power — revised cost estimates for UAMPS Carbon Free Power Project, ~$6,100/kW ($6.1/W) target but independent estimates higher",
+      "source_url": "https://www.nuscalepower.com/"
+    },
+    {
+      "year": 2020,
+      "value": 8.0,
+      "source": "IAEA Advances in SMR Technology Developments 2020 — estimated overnight costs for leading designs",
+      "source_url": "https://www.iaea.org/publications/13414/advances-in-small-modular-reactor-technology-developments"
+    },
+    {
+      "year": 2022,
+      "value": 7.5,
+      "source": "MIT The Future of Nuclear Energy in a Carbon-Constrained World (updated estimates); Linglong One (China) construction costs",
+      "source_url": "https://energy.mit.edu/research/future-nuclear-energy-carbon-constrained-world/"
+    },
+    {
+      "year": 2023,
+      "value": 6.5,
+      "source": "NEI/World Nuclear Association — estimates for nth-of-a-kind SMR: $4,000-6,500/kW range; NuScale CFPP cancellation at $9,300/kW illustrates first-of-a-kind challenges",
+      "source_url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/nuclear-power-reactors/small-nuclear-power-reactors"
+    },
+    {
+      "year": 2024,
+      "value": 5.5,
+      "source": "DOE/Kairos Power, X-energy projections for HALEU-fueled designs; Chinese Linglong One nearing completion at lower costs",
+      "source_url": "https://www.energy.gov/ne/advanced-small-modular-reactors-smrs"
+    }
+  ]
+}

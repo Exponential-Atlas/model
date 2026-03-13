@@ -1,0 +1,104 @@
+{
+  "id": "3d_metal",
+  "name": "Metal 3D Printing Cost",
+  "description": "Cost per cubic centimetre for metal additive manufacturing (DMLS/SLM/binder jetting). Tracks cost reduction driven by larger build volumes, multi-laser systems, and binder jetting commercialization.",
+  "unit": "$/cm3",
+  "direction": "decreasing",
+  "category": "Manufacturing",
+  "confidence": "medium",
+  "best_fit": "wrights_law",
+  "physical_floor": 0.05,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.17,
+    "cumulative_production": [
+      {
+        "year": 2010,
+        "value": 0.2,
+        "unit": "cumulative $B metal AM market revenue (proxy for volume)",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2013,
+        "value": 0.8,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2015,
+        "value": 1.8,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2017,
+        "value": 3.5,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2019,
+        "value": 6.5,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2021,
+        "value": 11.0,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+      },
+      {
+        "year": 2023,
+        "value": 17.0,
+        "unit": "cumulative $B metal AM market revenue",
+        "source_url": "https://wohlersassociates.com/product/wohlers-report-2024/"
+      }
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2010,
+      "value": 50,
+      "source": "Wohlers Associates — Wohlers Report (Additive Manufacturing Industry); early DMLS/SLM parts very expensive",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2013,
+      "value": 25,
+      "source": "Wohlers Report 2014 — EOS, Concept Laser systems improving; aerospace early adoption",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2016,
+      "value": 15,
+      "source": "Wohlers Associates — Wohlers Report 2017; GE Aviation LEAP fuel nozzle driving volume",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2018,
+      "value": 8,
+      "source": "Wohlers Report 2019 — multi-laser systems, Desktop Metal entering market",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2020,
+      "value": 5,
+      "source": "Wohlers Report 2021 — binder jetting (ExOne, Desktop Metal) reducing per-part costs",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2022,
+      "value": 4,
+      "source": "Wohlers Associates — Wohlers Report 2023; HP Metal Jet, Desktop Metal Production System",
+      "source_url": "https://wohlersassociates.com/product/wohlers-report-2023/"
+    },
+    {
+      "year": 2025,
+      "value": 2,
+      "source": "Desktop Metal / Markforged / Xact Metal pricing benchmarks",
+      "source_url": "https://www.desktopmetal.com/"
+    }
+  ]
+}

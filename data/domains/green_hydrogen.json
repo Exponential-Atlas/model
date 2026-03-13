@@ -1,0 +1,64 @@
+{
+  "id": "green_hydrogen",
+  "name": "Green Hydrogen Production Cost",
+  "description": "Cost of producing hydrogen via electrolysis powered by renewable energy. Key enabler for industrial decarbonization, long-duration storage, and synthetic fuels.",
+  "unit": "$/kg",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": 0.50,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2010,
+      "value": 13.0,
+      "source": "IRENA Green Hydrogen Cost Reduction report 2020 (historical estimate for PEM electrolysis + early solar)",
+      "source_url": "https://www.irena.org/publications/2020/Dec/Green-hydrogen-cost-reduction"
+    },
+    {
+      "year": 2015,
+      "value": 8.5,
+      "source": "IEA The Future of Hydrogen 2019 — estimated green H2 cost with declining solar prices",
+      "source_url": "https://www.iea.org/reports/the-future-of-hydrogen"
+    },
+    {
+      "year": 2018,
+      "value": 6.0,
+      "source": "IRENA Green Hydrogen Cost Reduction — electrolyzer + renewable electricity costs declining",
+      "source_url": "https://www.irena.org/publications/2020/Dec/Green-hydrogen-cost-reduction"
+    },
+    {
+      "year": 2020,
+      "value": 5.0,
+      "source": "IEA Global Hydrogen Review 2021 — best case regions approaching $4-5/kg",
+      "source_url": "https://www.iea.org/reports/global-hydrogen-review-2021"
+    },
+    {
+      "year": 2021,
+      "value": 4.5,
+      "source": "BloombergNEF Hydrogen Economy Outlook 2021",
+      "source_url": "https://about.bnef.com/blog/green-hydrogen-to-undercut-gray-sibling-by-end-of-decade/"
+    },
+    {
+      "year": 2022,
+      "value": 4.0,
+      "source": "IEA Global Hydrogen Review 2022 — best regions Chile, Middle East, Australia",
+      "source_url": "https://www.iea.org/reports/global-hydrogen-review-2022"
+    },
+    {
+      "year": 2023,
+      "value": 3.5,
+      "source": "IEA Global Hydrogen Review 2023 — projects in Saudi Arabia, Chile targeting $3-4/kg",
+      "source_url": "https://www.iea.org/reports/global-hydrogen-review-2023"
+    },
+    {
+      "year": 2024,
+      "value": 3.0,
+      "source": "IRENA World Energy Transitions Outlook 2024 — best projects approaching $3/kg (approx)",
+      "source_url": "https://www.irena.org/Publications/2024/Jun/World-Energy-Transitions-Outlook-2024"
+    }
+  ]
+}

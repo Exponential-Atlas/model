@@ -1,0 +1,131 @@
+{
+  "id": "solar_module",
+  "name": "Solar PV Module Cost",
+  "description": "Cost per watt of solar photovoltaic modules, tracking the global average selling price",
+  "unit": "$/watt",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": 0.005,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.20,
+    "cumulative_production": [
+      {"year": 1976, "value": 0.001, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 1985, "value": 0.02, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 1995, "value": 0.5, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2000, "value": 1.5, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2005, "value": 5, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2010, "value": 40, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2015, "value": 230, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2020, "value": 760, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"},
+      {"year": 2025, "value": 2400, "unit": "GW", "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"}
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 1976,
+      "value": 106,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 1980,
+      "value": 30,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 1985,
+      "value": 12,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 1990,
+      "value": 8.5,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 1995,
+      "value": 6,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2000,
+      "value": 5,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2005,
+      "value": 4,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2008,
+      "value": 3.5,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2010,
+      "value": 2,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2012,
+      "value": 1,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2014,
+      "value": 0.7,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2016,
+      "value": 0.5,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2018,
+      "value": 0.4,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2020,
+      "value": 0.3,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2022,
+      "value": 0.25,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2024,
+      "value": 0.1,
+      "source": "BloombergNEF — Solar Module Price Index 2024",
+      "source_url": "https://about.bnef.com/blog/solar-module-prices-hit-new-low/"
+    },
+    {
+      "year": 2025,
+      "value": 0.08,
+      "source": "BloombergNEF — Solar Module Price Index 2025",
+      "source_url": "https://about.bnef.com/blog/solar-module-prices-hit-new-low/"
+    }
+  ]
+}

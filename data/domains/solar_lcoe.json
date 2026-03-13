@@ -1,0 +1,70 @@
+{
+  "id": "solar_lcoe",
+  "name": "Solar LCOE",
+  "description": "Levelized cost of electricity from utility-scale solar photovoltaic installations",
+  "unit": "$/MWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "log_linear",
+  "physical_floor": 1.0,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2009,
+      "value": 359,
+      "source": "Lazard Levelized Cost of Energy Analysis v16.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2012,
+      "value": 150,
+      "source": "Lazard Levelized Cost of Energy Analysis v16.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2014,
+      "value": 100,
+      "source": "Lazard Levelized Cost of Energy Analysis v16.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2016,
+      "value": 65,
+      "source": "Lazard Levelized Cost of Energy Analysis v16.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2018,
+      "value": 50,
+      "source": "Lazard Levelized Cost of Energy Analysis v16.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2020,
+      "value": 40,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2023,
+      "value": 46,
+      "source": "IRENA Renewable Power Generation Costs 2023",
+      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+    },
+    {
+      "year": 2024,
+      "value": 38,
+      "source": "Lazard Levelized Cost of Energy Analysis v17.0",
+      "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus/"
+    },
+    {
+      "year": 2025,
+      "value": 33,
+      "source": "BloombergNEF Global LCOE Benchmark H1 2025",
+      "source_url": "https://about.bnef.com/blog/cost-of-clean-energy-technologies-drop-as-supply-of-key-components-grows/"
+    }
+  ]
+}

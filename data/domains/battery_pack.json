@@ -1,0 +1,83 @@
+{
+  "id": "battery_pack",
+  "name": "Battery Pack Cost",
+  "description": "Average lithium-ion battery pack cost per kilowatt-hour, volume-weighted global average",
+  "unit": "$/kWh",
+  "direction": "decreasing",
+  "category": "Energy",
+  "confidence": "high",
+  "best_fit": "wrights_law",
+  "physical_floor": 5,
+  "physical_ceiling": null,
+  "wrights_law": {
+    "learning_rate": 0.18,
+    "cumulative_production": [
+      {"year": 2010, "value": 0.5, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2012, "value": 2, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2014, "value": 8, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2016, "value": 30, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2018, "value": 120, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2020, "value": 350, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2022, "value": 800, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2024, "value": 1800, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"},
+      {"year": 2025, "value": 2700, "unit": "GWh", "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"}
+    ]
+  },
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2010,
+      "value": 1183,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2012,
+      "value": 726,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2014,
+      "value": 592,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2016,
+      "value": 296,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2018,
+      "value": 185,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2020,
+      "value": 140,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2022,
+      "value": 151,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2024,
+      "value": 115,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2024",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    },
+    {
+      "year": 2025,
+      "value": 108,
+      "source": "BloombergNEF Lithium-Ion Battery Price Survey 2025",
+      "source_url": "https://about.bnef.com/blog/lithium-ion-battery-pack-prices-hit-record-low-of-139-kwh/"
+    }
+  ]
+}

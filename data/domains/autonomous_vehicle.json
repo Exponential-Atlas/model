@@ -1,0 +1,64 @@
+{
+  "id": "autonomous_vehicle",
+  "name": "Autonomous Vehicle Miles per Disengagement",
+  "description": "Average miles driven between safety-critical disengagements for leading autonomous vehicle programs. Based on California DMV disengagement reports and company data. Higher is better.",
+  "unit": "miles/disengagement",
+  "direction": "increasing",
+  "category": "Robotics",
+  "confidence": "medium",
+  "best_fit": "log_linear",
+  "physical_floor": null,
+  "physical_ceiling": null,
+  "wrights_law": null,
+  "piecewise": null,
+  "data_points": [
+    {
+      "year": 2015,
+      "value": 1245,
+      "source": "California DMV AV Disengagement Reports 2015 — Google/Waymo self-driving car project",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2016,
+      "value": 5128,
+      "source": "California DMV AV Disengagement Reports 2016 — Waymo reported 5,128 miles/disengagement",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2017,
+      "value": 5596,
+      "source": "California DMV AV Disengagement Reports 2017 — Waymo reported 5,596 miles/disengagement",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2018,
+      "value": 11017,
+      "source": "California DMV AV Disengagement Reports 2018 — Waymo: 11,017 miles/disengagement",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2019,
+      "value": 13219,
+      "source": "California DMV AV Disengagement Reports 2019 — Waymo: 13,219 miles/disengagement across 1.45M miles",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2020,
+      "value": 29945,
+      "source": "California DMV AV Disengagement Reports 2020 — Waymo: 29,945 miles/disengagement (COVID reduced total miles)",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2021,
+      "value": 39000,
+      "source": "California DMV AV Disengagement Reports 2021 — Waymo continuing improvement; Cruise also reporting",
+      "source_url": "https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/disengagement-reports/"
+    },
+    {
+      "year": 2023,
+      "value": 50000,
+      "source": "Waymo public safety data — millions of rider-only miles in San Francisco, Phoenix; disengagement metric becoming less meaningful as commercial operations scale (approx estimate)",
+      "source_url": "https://waymo.com/safety/"
+    }
+  ]
+}
