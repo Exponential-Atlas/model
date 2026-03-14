@@ -44,9 +44,9 @@
     },
     {
       "year": 2020,
-      "value": 40,
-      "source": "IRENA Renewable Power Generation Costs 2023",
-      "source_url": "https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023"
+      "value": 57,
+      "source": "IRENA Renewable Power Generation Costs in 2020 (global weighted average $0.057/kWh)",
+      "source_url": "https://www.irena.org/publications/2021/Jun/Renewable-Power-Costs-in-2020"
     },
     {
       "year": 2023,

@@ -46,14 +46,14 @@
     },
     {
       "year": 2023,
-      "value": 18,
-      "source": "Insilico Medicine — AI-discovered drug enters Phase II in record time",
-      "source_url": "https://insilico.com/blog/insilico-medicine-announces-the-first-ai-discovered-and-ai-designed-drug-candidate"
+      "value": 24,
+      "source": "AI-assisted drug discovery industry average — best cases 13-18 months (Insilico, Exscientia), typical 24+ months",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12298131/"
     },
     {
       "year": 2025,
-      "value": 8,
-      "source": "Google AI co-scientist / Isomorphic Labs accelerated discovery pipelines",
+      "value": 14,
+      "source": "AI-accelerated discovery pipelines — Insilico/Isomorphic Labs/Google AI co-scientist compressing preclinical to 13-18 months",
       "source_url": "https://www.isomorphiclabs.com/"
     }
   ]

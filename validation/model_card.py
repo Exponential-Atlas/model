@@ -84,7 +84,7 @@ def _build_model_details() -> dict:
             "the uncertainty at each step."
         ),
         "framework": "Python 3, NumPy, SciPy",
-        "license": "MIT License — full source code, model, and data freely available at github.com/Exponential-Atlas/exponential-atlas",
+        "license": "MIT License — full model code and data freely available at github.com/Exponential-Atlas/model",
     }
 
 

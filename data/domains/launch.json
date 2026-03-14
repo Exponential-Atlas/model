@@ -46,14 +46,14 @@
     },
     {
       "year": 2025,
-      "value": 500,
-      "source": "SpaceX Starship estimated cost per kg (early operational flights)",
-      "source_url": "https://www.spacex.com/vehicles/starship/"
+      "value": 1100,
+      "source": "SpaceX Falcon 9 Block 5 reusable — mature reuse economics (Starship not yet commercial)",
+      "source_url": "https://www.spacex.com/launches/"
     },
     {
       "year": 2026,
-      "value": 94,
-      "source": "SpaceX Starship target cost per kg (full reusability at scale)",
+      "value": 500,
+      "source": "SpaceX Starship estimated cost per kg (early operational flights with partial reuse)",
       "source_url": "https://www.spacex.com/vehicles/starship/"
     }
   ]

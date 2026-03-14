@@ -98,8 +98,8 @@
     },
     {
       "year": 2018,
-      "value": 800,
-      "source": "NHGRI Genome Sequencing Costs Data",
+      "value": 1000,
+      "source": "NHGRI Genome Sequencing Costs Data (cost did not drop below $1,000 until 2019)",
       "source_url": "https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost"
     },
     {

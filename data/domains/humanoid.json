@@ -32,27 +32,15 @@
     },
     {
       "year": 2024.5,
-      "value": 90000,
-      "source": "Unitree G1 announced pricing",
+      "value": 16000,
+      "source": "Unitree G1 launch pricing (August 2024, mass production)",
       "source_url": "https://www.unitree.com/g1/"
-    },
-    {
-      "year": 2025,
-      "value": 30000,
-      "source": "Tesla Optimus production target pricing",
-      "source_url": "https://www.tesla.com/AI"
     },
     {
       "year": 2025.5,
-      "value": 16000,
-      "source": "Unitree G1 EDU pricing / Chinese manufacturer competitive pricing",
-      "source_url": "https://www.unitree.com/g1/"
-    },
-    {
-      "year": 2025.6,
-      "value": 5900,
-      "source": "Unitree G1 base model pricing announcement",
-      "source_url": "https://www.unitree.com/g1/"
+      "value": 13500,
+      "source": "Unitree G1 Basic retail pricing (shop.unitree.com)",
+      "source_url": "https://shop.unitree.com/products/unitree-g1"
     }
   ]
 }
